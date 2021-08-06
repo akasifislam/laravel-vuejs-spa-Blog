@@ -181,12 +181,12 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <router-link to="/category-list" class="nav-link">
               <i class="nav-icon fa fa-th"></i>
               <p>
                 Category
               </p>
-            </a>
+            </router-link>
           </li>
         </ul>
       </nav>
@@ -202,7 +202,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1 class="text-center">Admin Plate</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
