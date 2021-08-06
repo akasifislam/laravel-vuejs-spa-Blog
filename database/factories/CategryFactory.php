@@ -22,7 +22,7 @@ class CategryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'cat_name' => $this->faker->sentence($nbWords = 1, $variableNbWords = true),
         ];
     }
 }
