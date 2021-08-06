@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::with('user', 'category')->get();
+        return $posts;
     }
 
     /**
