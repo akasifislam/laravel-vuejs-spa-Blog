@@ -16,6 +16,7 @@ class PostController extends Controller
     {
         $posts = Post::with('user', 'category')->get();
         return $posts;
+        // return response()->json($posts);
     }
 
     /**
