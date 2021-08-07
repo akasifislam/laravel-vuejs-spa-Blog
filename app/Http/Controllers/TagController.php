@@ -14,7 +14,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        return $tages = Tag::latest('id')->get();
+
+        return response()->json($tages, 200);
     }
 
     /**

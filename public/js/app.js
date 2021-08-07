@@ -2088,7 +2088,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   state: {
     categories: [],
-    posts: []
+    posts: [],
+    tages: []
   },
   getters: {
     getCategories: function getCategories(state) {
@@ -2096,6 +2097,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getPosts: function getPosts(state) {
       return state.posts;
+    },
+    getTages: function getTages(state) {
+      return state.tages;
     }
   },
   mutations: {
@@ -2105,6 +2109,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     SET_POSTS: function SET_POSTS(state, data) {
       state.posts = data;
+    },
+    SET_TAGES: function SET_TAGES(state, data) {
+      state.tages = data;
     }
   },
   actions: {
@@ -2118,6 +2125,12 @@ __webpack_require__.r(__webpack_exports__);
       var commit = _ref2.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/posts').then(function (response) {
         commit('SET_POSTS', response.data);
+      });
+    },
+    loadTages: function loadTages(_ref3) {
+      var commit = _ref3.commit;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tages').then(function (response) {
+        commit('SET_TAGES', response.data);
       });
     }
   }

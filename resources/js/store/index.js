@@ -4,6 +4,7 @@ export default {
     state:{
         categories: [],
         posts:[],
+        tages:[],
     },
     getters:{
         getCategories(state)
@@ -13,6 +14,10 @@ export default {
         getPosts(state)
         {
             return state.posts
+        },
+        getTages(state)
+        {
+            return state.tages
         }
     },
     mutations:{
@@ -23,7 +28,10 @@ export default {
         },
         SET_POSTS(state,data){
             state.posts = data 
-        }
+        },
+        SET_TAGES(state,data){
+            state.tages = data
+        },
     },
     actions:{
         loadCategories({commit}){
@@ -34,6 +42,11 @@ export default {
         loadPosts({commit}) {
             axios.get('/api/posts').then((response) => {
                 commit('SET_POSTS',response.data)
+            })
+        },
+        loadTages({commit}) {
+            axios.get('/api/tages').then((response) => {
+                commit('SET_TAGES',response.data)
             })
         }
     },

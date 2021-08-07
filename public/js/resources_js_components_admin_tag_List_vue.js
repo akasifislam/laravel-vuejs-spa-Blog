@@ -51,14 +51,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({// computed:{
-  //    categories(){
-  //        return this.$store.getters.getCategories
-  //    }
-  // },
-  // created(){
-  //     this.$store.dispatch("loadCategories")
-  // }
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  computed: {
+    tages: function tages() {
+      return this.$store.getters.getTages;
+    }
+  },
+  created: function created() {
+    this.$store.dispatch("loadTages");
+  }
 });
 
 /***/ }),
@@ -152,9 +153,7 @@ var render = function() {
       _c("div", { staticClass: "col-10 offset-1" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _c("h3", { staticClass: "card-title" }, [
-              _vm._v("Category List Table")
-            ]),
+            _c("h3", { staticClass: "card-title" }, [_vm._v("Tag List Table")]),
             _vm._v(" "),
             _c(
               "div",
@@ -173,7 +172,32 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "card-body table-responsive p-0" }, [
+            _c(
+              "table",
+              {
+                staticClass:
+                  "table table-bordered table-striped table-sm table-hover"
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.tages, function(tag, index) {
+                    return _c("tr", { key: tag.id }, [
+                      _c("td", [_vm._v("  " + _vm._s(index + 1) + "  ")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(" " + _vm._s(tag.name) + " ")]),
+                      _vm._v(" "),
+                      _vm._m(1, true)
+                    ])
+                  }),
+                  0
+                )
+              ]
+            )
+          ])
         ])
       ])
     ])
@@ -184,49 +208,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body table-responsive p-0" }, [
-      _c(
-        "table",
-        {
-          staticClass: "table table-bordered table-striped table-sm table-hover"
-        },
-        [
-          _c("thead", [
-            _c("tr", [
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("SL")]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Category Name")]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", [_vm._v("a")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("a")]),
-              _vm._v(" "),
-              _c("td", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-sm btn-success",
-                    attrs: { href: "" }
-                  },
-                  [_vm._v("edit")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "btn btn-sm btn-danger", attrs: { href: "" } },
-                  [_vm._v("delete")]
-                )
-              ])
-            ])
-          ])
-        ]
-      )
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("SL")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("a", { staticClass: "btn btn-sm btn-success", attrs: { href: "" } }, [
+        _vm._v("edit")
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-sm btn-danger", attrs: { href: "" } }, [
+        _vm._v("delete")
+      ])
     ])
   }
 ]
