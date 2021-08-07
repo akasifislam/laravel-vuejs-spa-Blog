@@ -43,6 +43,10 @@ export default {
       const response = await this.form.post('/api/categories')
       .then((response) => {
         this.$router.push('/category-list')
+        Toast.fire({
+          icon: 'success',
+          title: 'Category Created'
+        })
       }).catch((e) => {
         console.log(e);
       })
