@@ -14,12 +14,12 @@
             <form @submit.prevent="addPost()" @keydown="form.onKeydown($event)">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" v-model="form.title" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
-
+                <input type="text" v-model="form.title" :class="{ 'is-invalid': form.errors.has('title') }" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
+                <div v-if="form.errors.has('title')"  class="text-danger" v-html="form.errors.get('title')" />
                 <label for="description">Description</label>
-                <textarea type="text" rows="6" v-model="form.description" class="form-control" id="description" name="description" aria-describedby="emailHelp" placeholder="Enter Description"></textarea>
+                <textarea type="text" rows="6" v-model="form.description" class="form-control" :class="{ 'is-invalid': form.errors.has('description') }" id="description" name="description" aria-describedby="emailHelp" placeholder="Enter Description"></textarea>
 
-                <div v-if="form.errors.has('description')" v-html="form.errors.get('description')" />
+                <div v-if="form.errors.has('description')" class="text-danger" v-html="form.errors.get('description')" />
             </div>
             <button type="submit" class="btn btn-success">Save</button>
             </form>
@@ -46,7 +46,15 @@ export default {
     async addPost() {
       // console.log('dsfsdfdsdfs');
       const response = await this.form.post('/api/posts')
-      console.log(response);
+      .then((response) => {
+        this.$router.push('/post-list')
+        Toast.fire({
+          icon: 'success',
+          title: 'Post Created'
+        })
+      }).catch((e) => {
+        console.log(e);
+      })
     }
   }
 }

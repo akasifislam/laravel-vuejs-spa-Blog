@@ -14,7 +14,9 @@ class CategryController extends Controller
      */
     public function index()
     {
-        dd("fnfkdn");
+        $categories = Categry::all();
+
+        return response()->json($categories, 200);
     }
 
     /**

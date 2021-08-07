@@ -1,6 +1,15 @@
 
 require('./bootstrap');
 import Vue from 'vue'
+// vuex start
+
+import Vuex from 'vuex'
+import storeData from './store/index'
+Vue.use(Vuex)
+const store = new Vuex.Store(
+  storeData
+)
+// vuex end
 import VueRouter from 'vue-router'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -41,5 +50,6 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 });

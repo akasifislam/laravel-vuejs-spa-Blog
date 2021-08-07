@@ -21,14 +21,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>post title</td>
-                <td>post description</td>
-                <td>
-                    <a href="" class="btn btn-sm btn-success">edit</a>
-                    <a href="" class="btn btn-sm btn-danger">delete</a>
-                </td>
+                <tr v-for="(post,key) in posts" :key="key" >
+                    <th scope="row">1</th>
+                    <td> {{ post.title }} </td>
+                    <td>{{ post.description}}</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-success">edit</a>
+                        <a href="" class="btn btn-sm btn-danger">delete</a>
+                    </td>
                 </tr>
             </tbody>
             </table>
@@ -42,7 +42,14 @@
 
 <script>
 export default {
-
+    computed:{
+       posts(){
+           return this.$store.getters.getPosts
+       }
+    },
+    created(){
+        this.$store.dispatch("loadPosts")
+    }
 }
 </script>
 

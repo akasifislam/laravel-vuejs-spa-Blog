@@ -20,13 +20,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Category name</td>
-                <td>
-                    <a href="" class="btn btn-sm btn-success">edit</a>
-                    <a href="" class="btn btn-sm btn-danger">delete</a>
-                </td>
+                <tr v-for="category in categories" :key="category.id">
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.cat_name }}</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-success">edit</a>
+                        <a href="" class="btn btn-sm btn-danger">delete</a>
+                    </td>
                 </tr>
             </tbody>
             </table>
@@ -40,10 +40,13 @@
 
 <script>
 export default {
-
+    computed:{
+       categories(){
+           return this.$store.getters.getCategories
+       }
+    },
+    created(){
+        this.$store.dispatch("loadCategories")
+    }
 }
 </script>
-
-<style>
-
-</style>
