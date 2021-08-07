@@ -2287,7 +2287,7 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 3000,
+  timer: 4000,
   timerProgressBar: true,
   didOpen: function didOpen(toast) {
     toast.addEventListener('mouseenter', (sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().stopTimer));
@@ -42465,6 +42465,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
+                    class: { "is-invalid": _vm.form.errors.has("cat_name") },
                     attrs: {
                       type: "text",
                       id: "cat_name",
@@ -42486,9 +42487,6 @@ var render = function() {
                   _vm.form.errors.has("cat_name")
                     ? _c("div", {
                         staticClass: "text-danger",
-                        class: {
-                          "is-invalid": _vm.form.errors.has("cat_name")
-                        },
                         domProps: {
                           innerHTML: _vm._s(_vm.form.errors.get("cat_name"))
                         }

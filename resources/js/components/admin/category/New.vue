@@ -14,9 +14,9 @@
             <form @submit.prevent="addCategory()" @keydown="form.onKeydown($event)">
             <div class="form-group">
                 <label for="cat_name">Category Name</label>
-                <input type="text" v-model="form.cat_name" class="form-control" id="cat_name" name="cat_name" aria-describedby="emailHelp" placeholder="Enter Category Name">
+                <input type="text" v-model="form.cat_name" class="form-control" :class="{ 'is-invalid': form.errors.has('cat_name') }" id="cat_name" name="cat_name" aria-describedby="emailHelp" placeholder="Enter Category Name">
 
-                <div v-if="form.errors.has('cat_name')" :class="{ 'is-invalid': form.errors.has('cat_name') }" class="text-danger" v-html="form.errors.get('cat_name')" />
+                <div v-if="form.errors.has('cat_name')" class="text-danger" v-html="form.errors.get('cat_name')" />
             </div>
             <button type="submit" class="btn btn-success">submit</button>
             </form>
