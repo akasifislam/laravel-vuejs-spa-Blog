@@ -46,7 +46,9 @@ export default {
        }
     },
     created(){
+        this.$Progress.start();
         this.$store.dispatch("loadCategories")
+        this.$Progress.finish();
     }
 }
 </script>

@@ -1,6 +1,26 @@
 
 require('./bootstrap');
 import Vue from 'vue'
+// vue progress bar start
+import VueProgressBar from 'vue-progressbar'
+
+const options = {
+  color: 'red',
+  failedColor: '#874b4b',
+  thickness: '2px',
+  transition: {
+    speed: '0.4s',
+    opacity: '0.5s',
+    termination: 600
+  },
+  autoRevert: true,
+  location: 'top',
+  inverse: false
+}
+
+Vue.use(VueProgressBar, options)
+// vue progress bar end
+
 // vuex start
 
 import Vuex from 'vuex'

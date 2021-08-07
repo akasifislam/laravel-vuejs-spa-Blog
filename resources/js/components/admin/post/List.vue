@@ -48,7 +48,9 @@ export default {
        }
     },
     created(){
+        this.$Progress.start();
         this.$store.dispatch("loadPosts")
+        this.$Progress.finish();
     }
 }
 </script>
