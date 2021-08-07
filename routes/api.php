@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('posts', PostController::class);
 Route::apiResource('categories', CategryController::class);
+Route::apiResource('tages', TagController::class);

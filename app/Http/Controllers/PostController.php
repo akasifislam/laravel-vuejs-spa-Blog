@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latets('id')->get();
+        $posts = Post::latest('id')->get();
         return response()->json($posts, 200);
     }
 

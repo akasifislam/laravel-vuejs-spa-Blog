@@ -1,8 +1,4 @@
 import AdminHomeComponent from './components/admin/AdminHome.vue'
-import CategoryList from './components/admin/category/List.vue'
-import CategoryAdd from './components/admin/category/New.vue'
-import PostList from './components/admin/post/List.vue'
-import PostCreate from './components/admin/post/New.vue'
 
 
 export const routes = [
@@ -12,21 +8,32 @@ export const routes = [
     },
     {
         path: '/category-list',
-        component: CategoryList,
+        component: ()=> import('./components/admin/category/List.vue'),
     },
     {
         path: '/category-add',
-        component: CategoryAdd,
+        component: ()=> import('./components/admin/category/New.vue'),
     },
     // =============== post route ============     
     {
         path: '/post-list',
         name: 'post-list',
-        component: PostList,
+        component: ()=> import('./components/admin/post/List.vue'),
     },
     {
         path: '/post-create',
         name: 'post-create',
-        component: PostCreate,
+        component: ()=> import('./components/admin/post/New.vue'),
+    },
+    // =============== Tag route ============     
+    {
+        path: '/tag-list',
+        name: 'tag-list',
+        component: ()=> import('./components/admin/tag/List.vue'),
+    },
+    {
+        path: '/tag-create',
+        name: 'tag-create',
+        component: ()=> import('./components/admin/tag/New.vue'),
     },
   ]

@@ -35,7 +35,16 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:5'
+        ]);
+
+        $categry = new Tag([
+            'name' => $request->name,
+        ]);
+        $categry->save();
+
+        return response()->json('Category created!');
     }
 
     /**
