@@ -21,6 +21,7 @@ const options = {
 Vue.use(VueProgressBar, options)
 // vue progress bar end
 
+
 // vuex start
 
 import Vuex from 'vuex'
@@ -30,6 +31,17 @@ const store = new Vuex.Store(
   storeData
 )
 // vuex end
+
+// momentjs start 
+var moment = require('moment'); // require
+
+Vue.filter('timeformat',(arg)=>{
+  return moment(arg).format("DD-MMM-YYYY");
+});
+
+// momentjs end
+
+
 import VueRouter from 'vue-router'
 Vue.config.productionTip = false
 Vue.use(VueRouter)

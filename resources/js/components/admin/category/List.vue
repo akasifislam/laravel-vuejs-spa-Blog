@@ -16,6 +16,7 @@
                 <tr>
                 <th scope="col">SL</th>
                 <th scope="col">Category Name</th>  
+                <th scope="col">Created Date</th>  
                 <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -23,6 +24,7 @@
                 <tr v-for="category in categories" :key="category.id">
                     <td>{{ category.id }}</td>
                     <td>{{ category.cat_name }}</td>
+                    <td>{{ category.created_at | timeformat }}</td>
                     <td>
                         <a href="" class="btn btn-sm btn-success">edit</a>
                         <a href="" class="btn btn-sm btn-danger">delete</a>

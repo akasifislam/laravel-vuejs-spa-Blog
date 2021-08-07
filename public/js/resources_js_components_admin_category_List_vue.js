@@ -51,6 +51,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     categories: function categories() {
@@ -194,6 +196,12 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(category.cat_name))]),
                       _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(_vm._f("timeformat")(category.created_at))
+                        )
+                      ]),
+                      _vm._v(" "),
                       _vm._m(1, true)
                     ])
                   }),
@@ -217,6 +225,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("SL")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Category Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Created Date")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
       ])
