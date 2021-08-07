@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::apiResource('post', PostController::class);
+Route::apiResource('posts', PostController::class);
+Route::apiResource('categories', CategryController::class);

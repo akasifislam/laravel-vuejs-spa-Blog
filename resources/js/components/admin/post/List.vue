@@ -4,9 +4,9 @@
          <div class="col-10 offset-1">
              <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Category List Table</h3>
+            <h3 class="card-title">Post List Table</h3>
             <div class="card-tools">
-                <router-link to="/category-add" class="btn btn-primary btn-sm">add</router-link>
+                <router-link :to="{ name: 'post-create' }" class="btn btn-primary btn-sm">post create</router-link>
             </div>
         </div>
         <!-- /.card-header -->
@@ -15,14 +15,16 @@
             <thead>
                 <tr>
                 <th scope="col">SL</th>
-                <th scope="col">Category Name</th>  
+                <th scope="col">Title</th>  
+                <th scope="col">Description</th>
                 <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                 <th scope="row">1</th>
-                <td>Category name</td>
+                <td>post title</td>
+                <td>post description</td>
                 <td>
                     <a href="" class="btn btn-sm btn-success">edit</a>
                     <a href="" class="btn btn-sm btn-danger">delete</a>

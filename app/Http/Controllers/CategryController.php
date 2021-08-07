@@ -14,7 +14,7 @@ class CategryController extends Controller
      */
     public function index()
     {
-        //
+        dd("fnfkdn");
     }
 
     /**
@@ -24,7 +24,7 @@ class CategryController extends Controller
      */
     public function create()
     {
-        //
+        dd("mfndfkjngkjd");
     }
 
     /**
@@ -35,7 +35,18 @@ class CategryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return "asif";
+
+        $this->validate($request, [
+            'cat_name' => 'required|min:5'
+        ]);
+
+        $categry = new Categry([
+            'cat_name' => $request->cat_name,
+        ]);
+        $categry->save();
+
+        return response()->json('Category created!');
     }
 
     /**

@@ -16,11 +16,11 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cat_id')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('comment_id')->nullable();
+            $table->unsignedBigInteger('user_id')->default(1)->nullable();
+            $table->unsignedBigInteger('comment_id')->default(1)->nullable();
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('photo')->default('zekonoakrtaPHOTO.jpg')->nullable();
             $table->timestamps();
         });
     }

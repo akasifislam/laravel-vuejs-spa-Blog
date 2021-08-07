@@ -37,7 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        $post->save();
+
+        return response()->json('Category created!');
     }
 
     /**

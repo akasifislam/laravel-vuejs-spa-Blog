@@ -6,22 +6,19 @@
         <div class="card-header">
             <h3 class="card-title">Category List Table</h3>
             <div class="card-tools">
-                <router-link to="/category-list" class="btn btn-primary btn-sm">Category List</router-link>
+                <router-link to="/category-list" class="btn btn-primary btn-sm">Category Lista</router-link>
             </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form>
+            <form @submit.prevent="addCategory()" @keydown="form.onKeydown($event)">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="cat_name">Category Name</label>
+                <input type="text" v-model="form.cat_name" class="form-control" id="cat_name" name="cat_name" aria-describedby="emailHelp" placeholder="Enter Category Name">
+
+                <div v-if="form.errors.has('cat_name')" :class="{ 'is-invalid': form.errors.has('cat_name') }" class="text-danger" v-html="form.errors.get('cat_name')" />
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success">submit</button>
             </form>
         </div>
         <!-- /.card-body -->
@@ -32,11 +29,24 @@
 </template>
 
 <script>
-export default {
+import Form from 'vform'
 
+export default {
+  data: () => ({
+    form: new Form({
+      cat_name: ''
+    })
+  }),
+
+  methods: {
+    async addCategory() {
+      const response = await this.form.post('/api/categories')
+      .then((response) => {
+        this.$router.push('/category-list')
+      }).catch((e) => {
+        console.log(e);
+      })
+    }
+  }
 }
 </script>
-
-<style>
-
-</style>
