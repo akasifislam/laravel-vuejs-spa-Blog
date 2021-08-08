@@ -2,13 +2,33 @@
  <div class="container">
      <div class="row">
          <div class="col-10 offset-1">
+             <!-- <div class="card">
+                 <div class="card-header">
+                     Search
+                 </div>
+                 <div class="card-body">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-outline-primary">search</button>
+                    </div>
+                 </div>
+             </div> -->
              <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Tag List Table</h3>
-            <div class="card-tools">
+            <h3 class="card-title">
+                <div class="input-group">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-outline-primary">search</button>
+                </div>
+                <br>
+                <div class="card-tools">
                 <router-link :to="{ name:'tag-create' }" class="btn btn-primary btn-sm">create tag</router-link>
                 <button @click.prevent="printInvoice" class="btn btn-sm btn-primary">PDF</button>
             </div>
+            </h3>
+            
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
@@ -53,7 +73,7 @@
             </table>
         </div>
         <!-- /.card-body -->
-    </div>
+            </div>
          </div>
      </div>
  </div>

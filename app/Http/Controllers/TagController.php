@@ -15,17 +15,21 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::query();
+        // $tags = Tag::query();
 
-        if (request('search')) {
-            return $tags->where('name', 'LIKE', '%' . request('search') . '%')
-                ->orderBy('id', 'DESC')
-                ->paginate();
-        } else {
-            $tags = $tags->orderBy('id', 'DESC')->paginate(10);
+        // if (request('search')) {
+        //     return $tags->where('name', 'LIKE', '%' . request('search') . '%')
+        //         ->orderBy('id', 'DESC')
+        //         ->paginate();
+        // } else {
+        //     $tags = $tags->orderBy('id', 'DESC')->paginate(10);
 
-            return response()->json($tags, 200);
-        }
+        //     return response()->json($tags, 200);
+        // }
+
+        return Tag::when(request('search'), function ($query) {
+            $query->where('name', 'LIKE', '%' . request('search') . '%');
+        })->orderBy('id', 'DESC')->paginate(10);
     }
 
     /**

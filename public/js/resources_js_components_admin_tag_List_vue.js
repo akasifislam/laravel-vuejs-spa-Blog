@@ -72,6 +72,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     tags: function tags() {
@@ -201,37 +221,41 @@ var render = function() {
       _c("div", { staticClass: "col-10 offset-1" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _c("h3", { staticClass: "card-title" }, [_vm._v("Tag List Table")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "card-tools" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary btn-sm",
-                    attrs: { to: { name: "tag-create" } }
-                  },
-                  [_vm._v("create tag")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm btn-primary",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.printInvoice.apply(null, arguments)
+            _c("h3", { staticClass: "card-title" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "card-tools" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-primary btn-sm",
+                      attrs: { to: { name: "tag-create" } }
+                    },
+                    [_vm._v("create tag")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-sm btn-primary",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.printInvoice.apply(null, arguments)
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("PDF")]
-                )
-              ],
-              1
-            )
+                    },
+                    [_vm._v("PDF")]
+                  )
+                ],
+                1
+              )
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
@@ -242,7 +266,7 @@ var render = function() {
                   "table table-bordered table-striped table-sm table-hover"
               },
               [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -429,6 +453,28 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group" }, [
+      _c("input", {
+        staticClass: "form-control rounded",
+        attrs: {
+          type: "search",
+          placeholder: "Search",
+          "aria-label": "Search",
+          "aria-describedby": "search-addon"
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-outline-primary", attrs: { type: "button" } },
+        [_vm._v("search")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
