@@ -11,6 +11,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -87,12 +89,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      search: ''
+    };
+  },
   computed: {
     tags: function tags() {
       return this.$store.getters.getTags;
@@ -116,7 +119,7 @@ __webpack_require__.r(__webpack_exports__);
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.isConfirmed) {
-          axios["delete"]('/api/tags/' + tag).then(function (response) {
+          axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/tags/' + tag).then(function (response) {
             Swal.fire('Deleted!', 'Tag Deleted', 'success');
 
             _this.$store.dispatch("loadTags");
@@ -126,6 +129,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     printInvoice: function printInvoice() {
       window.print();
+    },
+    searchTag: function searchTag() {
+      var _this2 = this;
+
+      //   console.log('ksdffsghjs');
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags?search=' + this.search).then(function (response) {
+        _this2.tags = response.data;
+
+        _this2.$store.dispatch("loadTags");
+      });
     }
   }
 });
@@ -221,11 +234,62 @@ var render = function() {
       _c("div", { staticClass: "col-10 offset-1" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
+            _vm._v("\n                    Search\n                ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.searchTag.apply(null, arguments)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.search,
+                        expression: "search"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      "aria-describedby": "emailHelp",
+                      placeholder: "search"
+                    },
+                    domProps: { value: _vm.search },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.search = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+                  [_vm._v("Submit")]
+                )
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
             _c("h3", { staticClass: "card-title" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
               _c(
                 "div",
                 { staticClass: "card-tools" },
@@ -266,7 +330,7 @@ var render = function() {
                   "table table-bordered table-striped table-sm table-hover"
               },
               [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -453,28 +517,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group" }, [
-      _c("input", {
-        staticClass: "form-control rounded",
-        attrs: {
-          type: "search",
-          placeholder: "Search",
-          "aria-label": "Search",
-          "aria-describedby": "search-addon"
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-outline-primary", attrs: { type: "button" } },
-        [_vm._v("search")]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

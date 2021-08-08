@@ -2,27 +2,22 @@
  <div class="container">
      <div class="row">
          <div class="col-10 offset-1">
-             <!-- <div class="card">
+             <div class="card">
                  <div class="card-header">
                      Search
                  </div>
                  <div class="card-body">
-                    <div class="input-group">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                            aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary">search</button>
+                     <form @submit.prevent="searchTag">
+                    <div class="form-group">
+                        <input v-model="search" type="text" class="form-control" aria-describedby="emailHelp" placeholder="search">
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                  </div>
-             </div> -->
+             </div>
              <div class="card">
         <div class="card-header">
             <h3 class="card-title">
-                <div class="input-group">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-primary">search</button>
-                </div>
-                <br>
                 <div class="card-tools">
                 <router-link :to="{ name:'tag-create' }" class="btn btn-primary btn-sm">create tag</router-link>
                 <button @click.prevent="printInvoice" class="btn btn-sm btn-primary">PDF</button>
@@ -80,7 +75,13 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+    data() {
+        return {
+            search: '',
+        }
+    },
     computed:{
        tags(){
            return this.$store.getters.getTags
@@ -117,6 +118,14 @@ export default {
 
         window.print()
 
+      },
+      searchTag() {
+        //   console.log('ksdffsghjs');
+          axios.get('/api/tags?search='+ this.search)
+                    .then((response) => {
+                        this.tags = response.data
+                        this.$store.dispatch("loadTags")
+                    })
       }
     }
 }
