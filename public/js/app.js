@@ -2184,7 +2184,7 @@ __webpack_require__.r(__webpack_exports__);
     loadTags: function loadTags(_ref3) {
       var commit = _ref3.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags').then(function (response) {
-        commit('SET_TAGS', response.data);
+        commit('SET_TAGS', response.data.data);
       });
     }
   }

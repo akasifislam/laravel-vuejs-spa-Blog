@@ -46,7 +46,7 @@ export default {
         },
         loadTags({commit}) {
             axios.get('/api/tags').then((response) => {
-                commit('SET_TAGS',response.data)
+                commit('SET_TAGS',response.data.data)
             })
         }
     },
