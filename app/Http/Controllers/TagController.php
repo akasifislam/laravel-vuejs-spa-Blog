@@ -68,7 +68,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+        return response()->json($tag, 200);
     }
 
     /**

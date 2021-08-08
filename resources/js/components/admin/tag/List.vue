@@ -24,7 +24,7 @@
                     <td>  {{ index+1 }}  </td>
                     <td> {{ tag.name }} </td>
                     <td>
-                        <a href="" class="btn btn-sm btn-success">edit</a>
+                        <router-link :to="`/api/tags/${tag.id}`" class="btn btn-sm btn-success">Edit</router-link>
                         <button @click.prevent="deleteTag(tag.id)" class="btn btn-sm btn-danger">Delete</button>
                     </td>
                 </tr>
@@ -61,14 +61,14 @@ export default {
             confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                      axios.delete('/api/tags/'+tag).then((response) => {
-                          Swal.fire(
-                              'Deleted!',
-                              'Tag Deleted',
-                              'success'
-                          )
-                            this.$store.dispatch("loadTags")
-                        })
+                    axios.delete('/api/tags/'+tag).then((response) => {
+                        Swal.fire(
+                            'Deleted!',
+                            'Tag Deleted',
+                            'success'
+                        )
+                        this.$store.dispatch("loadTags")
+                    })
                 }
             })
         }

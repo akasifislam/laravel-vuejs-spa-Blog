@@ -41,4 +41,9 @@ export const routes = [
         name: 'tag-create',
         component: ()=> import('./components/admin/tag/New.vue'),
     },
+    {
+        path: '/tag-edit/:id',
+        name: 'tag-edit',
+        component: ()=> import('./components/admin/tag/Edit.vue'),
+    },
   ]

@@ -214,30 +214,34 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(" " + _vm._s(tag.name) + " ")]),
                       _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-sm btn-success",
-                            attrs: { href: "" }
-                          },
-                          [_vm._v("edit")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-sm btn-danger",
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.deleteTag(tag.id)
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "btn btn-sm btn-success",
+                              attrs: { to: "/api/tags/" + tag.id }
+                            },
+                            [_vm._v("Edit")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-sm btn-danger",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.deleteTag(tag.id)
+                                }
                               }
-                            }
-                          },
-                          [_vm._v("Delete")]
-                        )
-                      ])
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ],
+                        1
+                      )
                     ])
                   }),
                   0
