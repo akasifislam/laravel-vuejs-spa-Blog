@@ -71,13 +71,21 @@ __webpack_require__.r(__webpack_exports__);
     deleteCategory: function deleteCategory(id) {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/acategories/' + id).then(function (response) {
-        _this.$store.dispatch("loadCategories");
+      Swal.fire({
+        title: 'Are you sure?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/acategories/' + id).then(function (response) {
+            Swal.fire('Deleted!', 'Category Deleted', 'success');
 
-        Toast.fire({
-          icon: 'success',
-          title: 'Category Deleted'
-        });
+            _this.$store.dispatch("loadCategories");
+          });
+        }
       });
     }
   }
@@ -207,9 +215,9 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.categories, function(category) {
-                    return _c("tr", { key: category.id }, [
-                      _c("td", [_vm._v(_vm._s(category.id))]),
+                  _vm._l(_vm.categories, function(category, index) {
+                    return _c("tr", { key: index }, [
+                      _c("td", [_vm._v(_vm._s(index + 1))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(category.cat_name))]),
                       _vm._v(" "),

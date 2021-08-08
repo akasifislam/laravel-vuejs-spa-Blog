@@ -25,7 +25,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('posts', PostController::class);
 Route::apiResource('categories', CategryController::class);
-Route::apiResource('tages', TagController::class);
+Route::apiResource('tags', TagController::class);
 
 Route::get('acategories/{id}', [CategryController::class, 'deleteCategory']);
 Route::get('acategory/{id}', [CategryController::class, 'editCategory']);
+Route::post('acategories-update/{id}', [CategryController::class, 'updateCategory']);

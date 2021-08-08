@@ -81,7 +81,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    addCategory: function addCategory() {
+    updateCategory: function updateCategory() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -90,27 +90,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return _this2.form.post('/api/categories').then(function (response) {
-                  _this2.$router.push('/category-list');
-
-                  Toast.fire({
-                    icon: 'success',
-                    title: 'Category Created'
-                  });
-                })["catch"](function (e) {
-                  console.log(e);
-                });
-
-              case 2:
-                response = _context.sent;
+                _context.prev = 0;
+                _context.next = 3;
+                return _this2.form.post("/api/acategories-update/".concat(_this2.$route.params.id));
 
               case 3:
+                response = _context.sent;
+
+                _this2.$router.push('/category-list');
+
+                Toast.fire({
+                  icon: 'success',
+                  title: 'Category Created'
+                });
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                console.log(e);
+
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[0, 8]]);
       }))();
     }
   }
@@ -1023,7 +1029,7 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
-                    return _vm.addCategory()
+                    return _vm.updateCategory()
                   },
                   keydown: function($event) {
                     return _vm.form.onKeydown($event)

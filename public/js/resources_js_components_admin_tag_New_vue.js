@@ -81,7 +81,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.form.post('/api/tages').then(function (response) {
+                return _this.form.post('/api/tags').then(function (response) {
                   _this.$router.push('/tag-list');
 
                   Toast.fire({

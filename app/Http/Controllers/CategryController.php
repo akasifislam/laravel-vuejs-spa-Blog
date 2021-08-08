@@ -91,6 +91,14 @@ class CategryController extends Controller
         //
     }
 
+    public function updateCategory(Request $request, $id)
+    {
+        $category = Categry::find($id);
+        $category->update($request->all());
+
+        return response()->json('Category updated!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

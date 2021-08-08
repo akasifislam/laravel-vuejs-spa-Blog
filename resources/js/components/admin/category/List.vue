@@ -21,8 +21,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="category in categories" :key="category.id">
-                    <td>{{ category.id }}</td>
+                <tr v-for="(category,index) in categories" :key="index">
+                    <td>{{ index+1 }}</td>
                     <td>{{ category.cat_name }}</td>
                     <td>{{ category.created_at | timeformat }}</td>
                     <td>
@@ -55,12 +55,24 @@ export default {
     },
     methods:{
         deleteCategory(id) {
-            axios.get('/api/acategories/'+id).then((response) => {
-                this.$store.dispatch("loadCategories")
-                Toast.fire({
-                icon: 'success',
-                title: 'Category Deleted'
-                })
+            Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                      axios.get('/api/acategories/'+id).then((response) => {
+                          Swal.fire(
+                              'Deleted!',
+                              'Category Deleted',
+                              'success'
+                          )
+                            this.$store.dispatch("loadCategories")
+                        })
+                }
             })
         }
     }

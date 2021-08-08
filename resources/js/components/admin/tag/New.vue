@@ -40,7 +40,7 @@ export default {
 
   methods: {
     async addTag() {
-      const response = await this.form.post('/api/tages')
+      const response = await this.form.post('/api/tags')
       .then((response) => {
         this.$router.push('/tag-list')
         Toast.fire({

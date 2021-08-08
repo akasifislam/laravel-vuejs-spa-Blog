@@ -11,7 +11,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form @submit.prevent="addCategory()" @keydown="form.onKeydown($event)">
+            <form @submit.prevent="updateCategory()" @keydown="form.onKeydown($event)">
             <div class="form-group">
                 <label for="cat_name">Category Name</label>
                 <input type="text" v-model="form.cat_name" class="form-control" :class="{ 'is-invalid': form.errors.has('cat_name') }" id="cat_name" name="cat_name" aria-describedby="emailHelp" placeholder="Enter Category Name">
@@ -46,17 +46,17 @@ export default {
   }),
 
   methods: {
-    async addCategory() {
-      const response = await this.form.post('/api/categories')
-      .then((response) => {
+    async updateCategory() {
+      try{
+        const response = await this.form.post(`/api/acategories-update/${this.$route.params.id}`)
         this.$router.push('/category-list')
         Toast.fire({
           icon: 'success',
           title: 'Category Created'
         })
-      }).catch((e) => {
+      }catch(error){
         console.log(e);
-      })
+      }
     }
   }
 }

@@ -20,12 +20,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(tag,index) in tages" :key="tag.id">
+                <tr v-for="(tag,index) in tags" :key="tag.id">
                     <td>  {{ index+1 }}  </td>
                     <td> {{ tag.name }} </td>
                     <td>
                         <a href="" class="btn btn-sm btn-success">edit</a>
-                        <a href="" class="btn btn-sm btn-danger">delete</a>
+                        <button @click.prevent="deleteTag(tag.id)" class="btn btn-sm btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -41,14 +41,37 @@
 <script>
 export default {
     computed:{
-       tages(){
-           return this.$store.getters.getTages
+       tags(){
+           return this.$store.getters.getTags
        }
     },
     created(){
         this.$Progress.start();
-        this.$store.dispatch("loadTages")
+        this.$store.dispatch("loadTags")
         this.$Progress.finish();
+    },
+    methods:{
+        deleteTag(tag) {
+            Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                      axios.delete('/api/tags/'+tag).then((response) => {
+                          Swal.fire(
+                              'Deleted!',
+                              'Tag Deleted',
+                              'success'
+                          )
+                            this.$store.dispatch("loadTags")
+                        })
+                }
+            })
+        }
     }
 }
 </script>

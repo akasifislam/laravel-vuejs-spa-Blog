@@ -14,9 +14,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        return $tages = Tag::latest('id')->get();
+        return $tags = Tag::latest('id')->get();
 
-        return response()->json($tages, 200);
+        return response()->json($tags, 200);
     }
 
     /**
@@ -91,6 +91,10 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Tag Deleted'
+        ], 200);
     }
 }

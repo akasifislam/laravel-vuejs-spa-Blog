@@ -1938,7 +1938,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 var options = {
-  color: 'red',
+  color: 'green',
   failedColor: '#874b4b',
   thickness: '2px',
   transition: {
@@ -1979,7 +1979,24 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().mixin({
     toast.addEventListener('mouseleave', (sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().resumeTimer));
   }
 });
-window.Toast = Toast;
+window.Toast = Toast; // Swal.fire({
+//   title: 'Are you sure?',
+//   text: "You won't be able to revert this!",
+//   icon: 'warning',
+//   showCancelButton: true,
+//   confirmButtonColor: '#3085d6',
+//   cancelButtonColor: '#d33',
+//   confirmButtonText: 'Yes, delete it!'
+// }).then((result) => {
+//   if (result.isConfirmed) {
+//     Swal.fire(
+//       'Deleted!',
+//       'Your file has been deleted.',
+//       'success'
+//     )
+//   }
+// })
+
 vue__WEBPACK_IMPORTED_MODULE_1__.default.component('AdminMain', __webpack_require__(/*! ./components/admin/AdminMaster.vue */ "./resources/js/components/admin/AdminMaster.vue").default);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__.default({
   routes: _routes__WEBPACK_IMPORTED_MODULE_6__.routes,
@@ -2137,7 +2154,7 @@ __webpack_require__.r(__webpack_exports__);
   state: {
     categories: [],
     posts: [],
-    tages: []
+    tags: []
   },
   getters: {
     getCategories: function getCategories(state) {
@@ -2146,8 +2163,8 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts(state) {
       return state.posts;
     },
-    getTages: function getTages(state) {
-      return state.tages;
+    getTags: function getTags(state) {
+      return state.tags;
     }
   },
   mutations: {
@@ -2158,8 +2175,8 @@ __webpack_require__.r(__webpack_exports__);
     SET_POSTS: function SET_POSTS(state, data) {
       state.posts = data;
     },
-    SET_TAGES: function SET_TAGES(state, data) {
-      state.tages = data;
+    SET_TAGS: function SET_TAGS(state, data) {
+      state.tags = data;
     }
   },
   actions: {
@@ -2175,10 +2192,10 @@ __webpack_require__.r(__webpack_exports__);
         commit('SET_POSTS', response.data);
       });
     },
-    loadTages: function loadTages(_ref3) {
+    loadTags: function loadTags(_ref3) {
       var commit = _ref3.commit;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tages').then(function (response) {
-        commit('SET_TAGES', response.data);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags').then(function (response) {
+        commit('SET_TAGS', response.data);
       });
     }
   }

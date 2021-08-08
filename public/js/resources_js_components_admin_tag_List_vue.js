@@ -53,14 +53,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
-    tages: function tages() {
-      return this.$store.getters.getTages;
+    tags: function tags() {
+      return this.$store.getters.getTags;
     }
   },
   created: function created() {
     this.$Progress.start();
-    this.$store.dispatch("loadTages");
+    this.$store.dispatch("loadTags");
     this.$Progress.finish();
+  },
+  methods: {
+    deleteTag: function deleteTag(tag) {
+      var _this = this;
+
+      Swal.fire({
+        title: 'Are you sure?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios["delete"]('/api/tags/' + tag).then(function (response) {
+            Swal.fire('Deleted!', 'Tag Deleted', 'success');
+
+            _this.$store.dispatch("loadTags");
+          });
+        }
+      });
+    }
   }
 });
 
@@ -186,13 +208,36 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.tages, function(tag, index) {
+                  _vm._l(_vm.tags, function(tag, index) {
                     return _c("tr", { key: tag.id }, [
                       _c("td", [_vm._v("  " + _vm._s(index + 1) + "  ")]),
                       _vm._v(" "),
                       _c("td", [_vm._v(" " + _vm._s(tag.name) + " ")]),
                       _vm._v(" "),
-                      _vm._m(1, true)
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-sm btn-success",
+                            attrs: { href: "" }
+                          },
+                          [_vm._v("edit")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-sm btn-danger",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.deleteTag(tag.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Delete")]
+                        )
+                      ])
                     ])
                   }),
                   0
@@ -217,20 +262,6 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { staticClass: "btn btn-sm btn-success", attrs: { href: "" } }, [
-        _vm._v("edit")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "btn btn-sm btn-danger", attrs: { href: "" } }, [
-        _vm._v("delete")
       ])
     ])
   }
