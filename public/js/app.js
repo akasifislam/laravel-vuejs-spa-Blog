@@ -1927,10 +1927,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_progressbar__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_progressbar__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter */ "./resources/js/filter.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_7__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
  // vue progress bar start
@@ -1958,36 +1959,31 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_3__.d
 var store = new vuex__WEBPACK_IMPORTED_MODULE_3__.default.Store(_store_index__WEBPACK_IMPORTED_MODULE_2__.default); // vuex end
 // momentjs start 
 
-var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"); // require
-
-
-vue__WEBPACK_IMPORTED_MODULE_1__.default.filter('timeformat', function (arg) {
-  return moment(arg).format("DD-MMM-YYYY");
-}); // momentjs end
+ // momentjs end
 
 
 vue__WEBPACK_IMPORTED_MODULE_1__.default.config.productionTip = false;
-vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_4__.default);
+vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vue_router__WEBPACK_IMPORTED_MODULE_5__.default);
  // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 
-window.Swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_6___default());
-var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().mixin({
+window.Swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_7___default());
+var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
   timer: 4000,
   timerProgressBar: true,
   didOpen: function didOpen(toast) {
-    toast.addEventListener('mouseenter', (sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().stopTimer));
-    toast.addEventListener('mouseleave', (sweetalert2__WEBPACK_IMPORTED_MODULE_6___default().resumeTimer));
+    toast.addEventListener('mouseenter', (sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().stopTimer));
+    toast.addEventListener('mouseleave', (sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().resumeTimer));
   }
 });
 window.Toast = Toast;
 vue__WEBPACK_IMPORTED_MODULE_1__.default.component('AdminMain', __webpack_require__(/*! ./components/admin/AdminMaster.vue */ "./resources/js/components/admin/AdminMaster.vue").default);
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
-  routes: _routes__WEBPACK_IMPORTED_MODULE_5__.routes,
-  mode: 'history'
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__.default({
+  routes: _routes__WEBPACK_IMPORTED_MODULE_6__.routes,
+  mode: 'hash'
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
@@ -2043,6 +2039,24 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/filter.js":
+/*!********************************!*\
+  !*** ./resources/js/filter.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
+
+vue__WEBPACK_IMPORTED_MODULE_0__.default.filter('timeformat', function (arg) {
+  return moment(arg).format("DD-MMM-YY");
+});
+
+/***/ }),
+
 /***/ "./resources/js/routes.js":
 /*!********************************!*\
   !*** ./resources/js/routes.js ***!
@@ -2068,6 +2082,12 @@ var routes = [{
   path: '/category-add',
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_admin_category_New_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/category/New.vue */ "./resources/js/components/admin/category/New.vue"));
+  }
+}, {
+  path: '/category-edit/:id',
+  name: 'category-edit',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_admin_category_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/category/Edit.vue */ "./resources/js/components/admin/category/Edit.vue"));
   }
 }, // =============== post route ============     
 {
@@ -79066,7 +79086,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

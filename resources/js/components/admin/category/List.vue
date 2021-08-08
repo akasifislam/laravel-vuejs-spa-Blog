@@ -26,8 +26,8 @@
                     <td>{{ category.cat_name }}</td>
                     <td>{{ category.created_at | timeformat }}</td>
                     <td>
-                        <a href="" class="btn btn-sm btn-success">edit</a>
-                        <a href="" class="btn btn-sm btn-danger">delete</a>
+                        <router-link :to="`/category-edit/${category.id}`" class="btn btn-sm btn-success">Edit</router-link>
+                        <button @click.prevent="deleteCategory(category.id)" class="btn btn-sm btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     computed:{
        categories(){
@@ -51,6 +52,17 @@ export default {
         this.$Progress.start();
         this.$store.dispatch("loadCategories")
         this.$Progress.finish();
+    },
+    methods:{
+        deleteCategory(id) {
+            axios.get('/api/acategories/'+id).then((response) => {
+                this.$store.dispatch("loadCategories")
+                Toast.fire({
+                icon: 'success',
+                title: 'Category Deleted'
+                })
+            })
+        }
     }
 }
 </script>

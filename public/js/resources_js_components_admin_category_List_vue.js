@@ -11,6 +11,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -53,6 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     categories: function categories() {
@@ -63,6 +66,20 @@ __webpack_require__.r(__webpack_exports__);
     this.$Progress.start();
     this.$store.dispatch("loadCategories");
     this.$Progress.finish();
+  },
+  methods: {
+    deleteCategory: function deleteCategory(id) {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/acategories/' + id).then(function (response) {
+        _this.$store.dispatch("loadCategories");
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Category Deleted'
+        });
+      });
+    }
   }
 });
 
@@ -202,7 +219,34 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _vm._m(1, true)
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "btn btn-sm btn-success",
+                              attrs: { to: "/category-edit/" + category.id }
+                            },
+                            [_vm._v("Edit")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-sm btn-danger",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.deleteCategory(category.id)
+                                }
+                              }
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ],
+                        1
+                      )
                     ])
                   }),
                   0
@@ -229,20 +273,6 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Created Date")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { staticClass: "btn btn-sm btn-success", attrs: { href: "" } }, [
-        _vm._v("edit")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "btn btn-sm btn-danger", attrs: { href: "" } }, [
-        _vm._v("delete")
       ])
     ])
   }

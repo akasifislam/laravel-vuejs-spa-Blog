@@ -14,6 +14,11 @@ export const routes = [
         path: '/category-add',
         component: ()=> import('./components/admin/category/New.vue'),
     },
+    {
+        path: '/category-edit/:id',
+        name: 'category-edit',
+        component: ()=> import('./components/admin/category/Edit.vue'),
+    },
     // =============== post route ============     
     {
         path: '/post-list',

@@ -59,7 +59,7 @@ class CategryController extends Controller
      */
     public function show(Categry $categry)
     {
-        //
+        return ['category request found', $categry];
     }
 
     /**
@@ -71,6 +71,12 @@ class CategryController extends Controller
     public function edit(Categry $categry)
     {
         //
+    }
+    public function editCategory($id)
+    {
+        // return $id;
+        $category = Categry::find($id);
+        return response()->json($category, 200);
     }
 
     /**
@@ -91,8 +97,28 @@ class CategryController extends Controller
      * @param  \App\Models\Categry  $categry
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categry $categry)
+    public function destroy($category)
     {
-        //
+        // return $category;
+        $category = Categry::find($category);
+        $category->delete();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Categry  $categry
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteCategory($id)
+    {
+        // return $id;
+        $category = Categry::find($id);
+        $category->delete();
+
+        return response()->json([
+            'success',
+            $category
+        ], 200);
     }
 }

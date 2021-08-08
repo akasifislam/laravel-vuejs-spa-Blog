@@ -33,11 +33,9 @@ const store = new Vuex.Store(
 // vuex end
 
 // momentjs start 
-var moment = require('moment'); // require
 
-Vue.filter('timeformat',(arg)=>{
-  return moment(arg).format("DD-MMM-YYYY");
-});
+
+import {filter} from './filter'
 
 // momentjs end
 
@@ -77,7 +75,7 @@ Vue.component('AdminMain', require('./components/admin/AdminMaster.vue').default
 
 const router = new VueRouter({
     routes,
-    mode: 'history'
+    mode: 'hash'
   })
 
 const app = new Vue({

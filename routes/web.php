@@ -29,7 +29,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 
-Route::get('/{anypath}', [HomeController::class, 'index'])->where('path', '.*');
+// Route::get('/{anypath}', [HomeController::class, 'index'])->where('path', '.*');
 
 
 
