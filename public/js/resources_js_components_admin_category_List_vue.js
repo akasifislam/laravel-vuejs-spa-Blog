@@ -68,7 +68,7 @@ __webpack_require__.r(__webpack_exports__);
     this.$Progress.finish();
   },
   methods: {
-    deleteCategory: function deleteCategory(id) {
+    deleteCategory: function deleteCategory(category) {
       var _this = this;
 
       Swal.fire({
@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.isConfirmed) {
-          axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/acategories/' + id).then(function (response) {
+          axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/categories/' + category).then(function (response) {
             Swal.fire('Deleted!', 'Category Deleted', 'success');
 
             _this.$store.dispatch("loadCategories");
@@ -196,7 +196,7 @@ var render = function() {
                     staticClass: "btn btn-primary btn-sm",
                     attrs: { to: "/category-add" }
                   },
-                  [_vm._v("add")]
+                  [_vm._v("create category")]
                 )
               ],
               1

@@ -1,7 +1,6 @@
 <template>
    <div class="container">
      <div class="row">
-         <h1> {{ this.$route.params.id }} </h1>
          <div class="col-10 offset-1">
              <div class="card">
         <div class="card-header">
@@ -12,14 +11,14 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form @submit.prevent="addTag()" @keydown="form.onKeydown($event)">
+            <form @submit.prevent="updateTag()" @keydown="form.onKeydown($event)">
             <div class="form-group">
                 <label for="name">Category Name</label>
                 <input type="text" v-model="form.name" class="form-control" :class="{ 'is-invalid': form.errors.has('name') }" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Category Name">
 
                 <div v-if="form.errors.has('name')" class="text-danger" v-html="form.errors.get('name')" />
             </div>
-            <button type="submit" class="btn btn-success">submit</button>
+            <button type="submit" class="btn btn-success">update</button>
             </form>
         </div>
         <!-- /.card-body -->
@@ -47,8 +46,8 @@ export default {
   }),
 
   methods: {
-    async addTag() {
-      const response = await this.form.post('/api/tags')
+    async updateTag() {
+      const response = await this.form.put(`/api/tags/${this.$route.params.id}`)
       .then((response) => {
         this.$router.push('/tag-list')
         Toast.fire({

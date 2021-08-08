@@ -63,7 +63,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -82,7 +81,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    addTag: function addTag() {
+    updateTag: function updateTag() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -92,7 +91,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this2.form.post('/api/tags').then(function (response) {
+                return _this2.form.put("/api/tags/".concat(_this2.$route.params.id)).then(function (response) {
                   _this2.$router.push('/tag-list');
 
                   Toast.fire({
@@ -993,8 +992,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("h1", [_vm._v(" " + _vm._s(this.$route.params.id) + " ")]),
-      _vm._v(" "),
       _c("div", { staticClass: "col-10 offset-1" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
@@ -1024,7 +1021,7 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
-                    return _vm.addTag()
+                    return _vm.updateTag()
                   },
                   keydown: function($event) {
                     return _vm.form.onKeydown($event)
@@ -1079,7 +1076,7 @@ var render = function() {
                 _c(
                   "button",
                   { staticClass: "btn btn-success", attrs: { type: "submit" } },
-                  [_vm._v("submit")]
+                  [_vm._v("update")]
                 )
               ]
             )

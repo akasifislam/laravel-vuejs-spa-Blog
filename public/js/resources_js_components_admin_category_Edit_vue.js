@@ -69,7 +69,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   mounted: function mounted() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/acategory/".concat(this.$route.params.id)).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/categories/".concat(this.$route.params.id)).then(function (response) {
       _this.form.fill(response.data);
     });
   },
@@ -92,7 +92,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.prev = 0;
                 _context.next = 3;
-                return _this2.form.post("/api/acategories-update/".concat(_this2.$route.params.id));
+                return _this2.form.put("/api/categories/".concat(_this2.$route.params.id));
 
               case 3:
                 response = _context.sent;

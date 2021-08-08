@@ -57,7 +57,8 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        //
+        return $tag;
+        return response()->json($tag, 200);
     }
 
     /**
@@ -68,7 +69,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        return response()->json($tag, 200);
+        //
     }
 
     /**
@@ -80,7 +81,8 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $tag->update($request->all());
+        return response()->json('Tag updated!');
     }
 
     /**

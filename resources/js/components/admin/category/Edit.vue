@@ -34,7 +34,7 @@ import axios from 'axios'
 
 export default {
   mounted() {
-    axios.get(`/api/acategory/${this.$route.params.id }`)
+    axios.get(`/api/categories/${this.$route.params.id }`)
     .then((response) => {
       this.form.fill(response.data)
     })
@@ -48,7 +48,7 @@ export default {
   methods: {
     async updateCategory() {
       try{
-        const response = await this.form.post(`/api/acategories-update/${this.$route.params.id}`)
+        const response = await this.form.put(`/api/categories/${this.$route.params.id}`)
         this.$router.push('/category-list')
         Toast.fire({
           icon: 'success',

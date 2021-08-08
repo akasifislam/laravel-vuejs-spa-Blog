@@ -57,9 +57,9 @@ class CategryController extends Controller
      * @param  \App\Models\Categry  $categry
      * @return \Illuminate\Http\Response
      */
-    public function show(Categry $categry)
+    public function show(Categry $category)
     {
-        return ['category request found', $categry];
+        return response()->json($category, 200);
     }
 
     /**
@@ -68,17 +68,11 @@ class CategryController extends Controller
      * @param  \App\Models\Categry  $categry
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categry $categry)
+    public function edit(Categry $category)
     {
-        //
-    }
-    public function editCategory($id)
-    {
-        // return $id;
-        $category = Categry::find($id);
+        return $category;
         return response()->json($category, 200);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -86,31 +80,12 @@ class CategryController extends Controller
      * @param  \App\Models\Categry  $categry
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categry $categry)
+    public function update(Request $request, Categry $category)
     {
-        //
-    }
-
-    public function updateCategory(Request $request, $id)
-    {
-        $category = Categry::find($id);
         $category->update($request->all());
-
         return response()->json('Category updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Categry  $categry
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($category)
-    {
-        // return $category;
-        $category = Categry::find($category);
-        $category->delete();
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -118,15 +93,12 @@ class CategryController extends Controller
      * @param  \App\Models\Categry  $categry
      * @return \Illuminate\Http\Response
      */
-    public function deleteCategory($id)
+    public function destroy(Categry $category)
     {
-        // return $id;
-        $category = Categry::find($id);
         $category->delete();
-
         return response()->json([
-            'success',
-            $category
+            'success' => true,
+            'message' => 'Category Deleted'
         ], 200);
     }
 }

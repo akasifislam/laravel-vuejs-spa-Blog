@@ -24,7 +24,7 @@
                     <td>  {{ index+1 }}  </td>
                     <td> {{ tag.name }} </td>
                     <td>
-                        <router-link :to="`/api/tags/${tag.id}`" class="btn btn-sm btn-success">Edit</router-link>
+                        <router-link :to="`/tag-edit/${tag.id}`" class="btn btn-sm btn-success">Edit</router-link>
                         <button @click.prevent="deleteTag(tag.id)" class="btn btn-sm btn-danger">Delete</button>
                     </td>
                 </tr>

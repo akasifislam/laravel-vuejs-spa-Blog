@@ -221,7 +221,7 @@ var render = function() {
                             "router-link",
                             {
                               staticClass: "btn btn-sm btn-success",
-                              attrs: { to: "/api/tags/" + tag.id }
+                              attrs: { to: "/tag-edit/" + tag.id }
                             },
                             [_vm._v("Edit")]
                           ),
