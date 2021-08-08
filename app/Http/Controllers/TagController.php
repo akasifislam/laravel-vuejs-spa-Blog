@@ -13,14 +13,16 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        if ($request->search) {
-            return Tag::where('name', 'LIKE', '%' . $request->search . '%')
+        $tags = Tag::query();
+
+        if (request('search')) {
+            return $tags->where('name', 'LIKE', '%' . request('search') . '%')
                 ->orderBy('id', 'DESC')
                 ->paginate();
         } else {
-            $tags = Tag::orderBy('id', 'DESC')->paginate(10);
+            $tags = $tags->orderBy('id', 'DESC')->paginate(10);
 
             return response()->json($tags, 200);
         }
