@@ -51,6 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     tags: function tags() {
@@ -82,6 +83,9 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
       });
+    },
+    printInvoice: function printInvoice() {
+      window.print();
     }
   }
 });
@@ -190,6 +194,20 @@ var render = function() {
                     attrs: { to: { name: "tag-create" } }
                   },
                   [_vm._v("create tag")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-sm btn-primary",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.printInvoice.apply(null, arguments)
+                      }
+                    }
+                  },
+                  [_vm._v("PDF")]
                 )
               ],
               1

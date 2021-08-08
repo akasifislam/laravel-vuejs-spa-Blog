@@ -7,6 +7,7 @@
             <h3 class="card-title">Tag List Table</h3>
             <div class="card-tools">
                 <router-link :to="{ name:'tag-create' }" class="btn btn-primary btn-sm">create tag</router-link>
+                <button @click.prevent="printInvoice" class="btn btn-sm btn-primary">PDF</button>
             </div>
         </div>
         <!-- /.card-header -->
@@ -71,7 +72,12 @@ export default {
                     })
                 }
             })
-        }
+        },
+        printInvoice(){ 
+
+        window.print()
+
+      }
     }
 }
 </script>

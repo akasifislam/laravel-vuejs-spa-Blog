@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TagsExport;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -57,7 +58,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        return $tag;
+        // return $tag;
         return response()->json($tag, 200);
     }
 
@@ -98,5 +99,11 @@ class TagController extends Controller
             'success' => true,
             'message' => 'Tag Deleted'
         ], 200);
+    }
+
+    public function export(Tag $tag)
+    {
+        response()->json($tag, 200);
+        return (new TagsExport($tag))->download('tags.xlsx');
     }
 }

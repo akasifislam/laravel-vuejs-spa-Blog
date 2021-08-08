@@ -31,6 +31,18 @@ Route::apiResource('categories', CategryController::class);
 Route::apiResource('tags', TagController::class);
 
 
-Route::get('/api/tags/pdf', function () {
+Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('tags.export');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/tags/pdf', function () {
     return view('invoice');
 });
