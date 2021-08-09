@@ -67,10 +67,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      categories: {},
       search: ''
     };
   },
@@ -83,6 +91,10 @@ __webpack_require__.r(__webpack_exports__);
     this.$Progress.start();
     this.$store.dispatch("loadCategories");
     this.$Progress.finish();
+  },
+  mounted: function mounted() {
+    // Fetch initial results
+    this.getResults();
   },
   methods: {
     deleteCategory: function deleteCategory(category) {
@@ -110,6 +122,14 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories?search=' + this.search).then(function (response) {
         _this2.$store.commit('UPADATE_CATEGORY', response.data.data);
+      });
+    },
+    getResults: function getResults() {
+      var _this3 = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories?page=' + page).then(function (response) {
+        _this3.categories = response.data;
       });
     }
   }
@@ -283,7 +303,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.categories, function(category, index) {
+                  _vm._l(_vm.categories.data, function(category, index) {
                     return _c("tr", { key: index }, [
                       _c("td", [_vm._v(_vm._s(index + 1))]),
                       _vm._v(" "),
@@ -328,6 +348,36 @@ var render = function() {
                   0
                 )
               ]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-center ml-5" },
+              [
+                _c(
+                  "pagination",
+                  {
+                    attrs: { data: _vm.categories },
+                    on: { "pagination-change-page": _vm.getResults }
+                  },
+                  [
+                    _c(
+                      "span",
+                      { attrs: { slot: "prev-nav" }, slot: "prev-nav" },
+                      [_vm._v("⬅ Previous")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { attrs: { slot: "next-nav" }, slot: "next-nav" },
+                      [_vm._v("Next ➡")]
+                    )
+                  ]
+                )
+              ],
+              1
             )
           ])
         ])

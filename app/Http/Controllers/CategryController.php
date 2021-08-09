@@ -14,6 +14,9 @@ class CategryController extends Controller
      */
     public function index()
     {
+
+        // Dry Code
+
         // $categories = Category::query();
 
         // if (request('search')) {
@@ -28,18 +31,8 @@ class CategryController extends Controller
 
 
         return Categry::when(request('search'), function ($query) {
-            $query->where('cat_name', 'LIKE', '%' . request('search') . '%');
-        })->orderBy('id', 'DESC')->paginate(20);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        dd("mfndfkjngkjd");
+            $query->where('fild_name', 'cat_name', 'LIKE', '%' . request('search') . '%');
+        })->orderBy('id', 'DESC')->paginate(8);
     }
 
     /**
