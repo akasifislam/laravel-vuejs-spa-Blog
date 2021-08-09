@@ -64,13 +64,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       form: new vform__WEBPACK_IMPORTED_MODULE_1__.default({
         title: '',
-        description: ''
+        description: '',
+        photo: ''
       })
     };
   },
@@ -106,6 +113,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    changePhoto: function changePhoto(event) {
+      var _this2 = this;
+
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function (event) {
+        _this2.form.photo = event.target.result;
+      };
+
+      reader.readAsDataURL(file);
     }
   }
 });
@@ -1064,12 +1083,14 @@ var render = function() {
                           innerHTML: _vm._s(_vm.form.errors.get("title"))
                         }
                       })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "description" } }, [
-                    _vm._v("Description")
-                  ]),
-                  _vm._v(" "),
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "description" } }, [
+                  _vm._v("Description")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
                   _c("textarea", {
                     directives: [
                       {
@@ -1108,6 +1129,28 @@ var render = function() {
                         }
                       })
                     : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.form.photo,
+                      alt: "dzfgsresgh",
+                      width: "120px",
+                      height: "80px"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    class: { "is-invalid": _vm.form.errors.has("title") },
+                    attrs: { type: "file", name: "photo", id: "photo" },
+                    on: {
+                      change: function($event) {
+                        return _vm.changePhoto($event)
+                      }
+                    }
+                  })
                 ]),
                 _vm._v(" "),
                 _c(
