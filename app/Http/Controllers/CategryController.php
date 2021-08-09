@@ -14,9 +14,22 @@ class CategryController extends Controller
      */
     public function index()
     {
-        $categories = Categry::latest('id')->get();
+        // $categories = Category::query();
 
-        return response()->json($categories, 200);
+        // if (request('search')) {
+        //     return $categories->where('name', 'LIKE', '%' . request('search') . '%')
+        //         ->orderBy('id', 'DESC')
+        //         ->paginate();
+        // } else {
+        //     $categories = $categories->orderBy('id', 'DESC')->paginate(10);
+
+        //     return response()->json($categories, 200);
+        // }
+
+
+        return Categry::when(request('search'), function ($query) {
+            $query->where('cat_name', 'LIKE', '%' . request('search') . '%');
+        })->orderBy('id', 'DESC')->paginate(20);
     }
 
     /**

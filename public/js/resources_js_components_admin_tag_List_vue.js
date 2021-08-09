@@ -89,6 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -133,11 +134,10 @@ __webpack_require__.r(__webpack_exports__);
     searchTag: function searchTag() {
       var _this2 = this;
 
-      //   console.log('ksdffsghjs');
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags?search=' + this.search).then(function (response) {
-        _this2.tags = response.data;
+        // this.tags = response.data.data
+        _this2.$store.commit('UPADATE_TAG', response.data.data); // this.$store.dispatch("loadTags")
 
-        _this2.$store.dispatch("loadTags");
       });
     }
   }
@@ -242,7 +242,7 @@ var render = function() {
               "form",
               {
                 on: {
-                  submit: function($event) {
+                  click: function($event) {
                     $event.preventDefault()
                     return _vm.searchTag.apply(null, arguments)
                   }

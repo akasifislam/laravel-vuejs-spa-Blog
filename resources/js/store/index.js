@@ -32,11 +32,14 @@ export default {
         SET_TAGS(state,data){
             state.tags = data
         },
+        UPADATE_TAG(state,data){
+            state.tags = data
+        },
     },
     actions:{
         loadCategories({commit}){
             axios.get('/api/categories').then((response) => {
-                commit('SET_CATEGORIES',response.data)
+                commit('SET_CATEGORIES',response.data.data)
             })
         },
         loadPosts({commit}) {

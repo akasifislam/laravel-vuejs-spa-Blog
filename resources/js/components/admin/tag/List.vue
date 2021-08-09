@@ -7,7 +7,7 @@
                      Search
                  </div>
                  <div class="card-body">
-                     <form @submit.prevent="searchTag">
+                     <form @click.prevent="searchTag">
                     <div class="form-group">
                         <input v-model="search" type="text" class="form-control" aria-describedby="emailHelp" placeholder="search">
                     </div>
@@ -67,6 +67,7 @@
             </tbody>
             </table>
         </div>
+        
         <!-- /.card-body -->
             </div>
          </div>
@@ -120,11 +121,11 @@ export default {
 
       },
       searchTag() {
-        //   console.log('ksdffsghjs');
           axios.get('/api/tags?search='+ this.search)
                     .then((response) => {
-                        this.tags = response.data
-                        this.$store.dispatch("loadTags")
+                        // this.tags = response.data.data
+                        this.$store.commit('UPADATE_TAG',response.data.data)
+                        // this.$store.dispatch("loadTags")
                     })
       }
     }
