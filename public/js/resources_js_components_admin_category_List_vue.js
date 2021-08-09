@@ -55,8 +55,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      search: ''
+    };
+  },
   computed: {
     categories: function categories() {
       return this.$store.getters.getCategories;
@@ -86,6 +103,13 @@ __webpack_require__.r(__webpack_exports__);
             _this.$store.dispatch("loadCategories");
           });
         }
+      });
+    },
+    searchCategory: function searchCategory() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories?search=' + this.search).then(function (response) {
+        _this2.$store.commit('UPADATE_CATEGORY', response.data.data);
       });
     }
   }
@@ -205,13 +229,57 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
             _c(
+              "form",
+              {
+                staticClass: "m-2",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.searchCategory.apply(null, arguments)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "col-12" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.search,
+                            expression: "search"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", name: "search", id: "search" },
+                        domProps: { value: _vm.search },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.search = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
               "table",
               {
                 staticClass:
                   "table table-bordered table-striped table-sm table-hover"
               },
               [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -268,6 +336,14 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-2" }, [
+      _c("button", { staticClass: "btn btn-success " }, [_vm._v("Search")])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

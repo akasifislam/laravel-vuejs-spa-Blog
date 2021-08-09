@@ -11,6 +11,18 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
+        <form class="m-2" @click.prevent="searchCategory">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" v-model="search" class="form-control" name="search" id="search">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success ">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
         <table class="table table-bordered table-striped table-sm table-hover">
             <thead>
                 <tr>
@@ -43,6 +55,11 @@
 <script>
 import axios from 'axios';
 export default {
+    data() {
+        return {
+            search: '',
+        }
+    },
     computed:{
        categories(){
            return this.$store.getters.getCategories
@@ -74,7 +91,14 @@ export default {
                         })
                 }
             })
+        },
+        searchCategory() {
+            axios.get('/api/categories?search='+ this.search)
+            .then((response) => {
+                this.$store.commit('UPADATE_CATEGORY',response.data.data)
+            })
         }
+
     }
 }
 </script>

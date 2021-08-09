@@ -122,11 +122,9 @@ export default {
       },
       searchTag() {
           axios.get('/api/tags?search='+ this.search)
-                    .then((response) => {
-                        // this.tags = response.data.data
-                        this.$store.commit('UPADATE_TAG',response.data.data)
-                        // this.$store.dispatch("loadTags")
-                    })
+            .then((response) => {
+                this.$store.commit('UPADATE_TAG',response.data.data)
+            })
       }
     }
 }

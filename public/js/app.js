@@ -2158,13 +2158,18 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mutations: {
+    // category
     SET_CATEGORIES: function SET_CATEGORIES(state, data) {
-      // console.log(state.categories)           
-      state.categories = data; // console.log(state.categories)           
+      state.categories = data;
     },
+    UPADATE_CATEGORY: function UPADATE_CATEGORY(state, data) {
+      state.categories = data;
+    },
+    // post
     SET_POSTS: function SET_POSTS(state, data) {
       state.posts = data;
     },
+    // tags
     SET_TAGS: function SET_TAGS(state, data) {
       state.tags = data;
     },

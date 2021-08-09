@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class
         ]);
 
-        Categry::factory(20)->create();
+        Categry::factory(30)->create();
         Post::factory(20)->create();
         Tag::factory(50)->create();
     }

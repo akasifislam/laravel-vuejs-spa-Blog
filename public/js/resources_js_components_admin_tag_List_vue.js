@@ -135,9 +135,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags?search=' + this.search).then(function (response) {
-        // this.tags = response.data.data
-        _this2.$store.commit('UPADATE_TAG', response.data.data); // this.$store.dispatch("loadTags")
-
+        _this2.$store.commit('UPADATE_TAG', response.data.data);
       });
     }
   }
