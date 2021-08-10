@@ -34,6 +34,16 @@
                     <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
                     </svg>
                 </button>
+                <button @click.prevent="downloadExcel" class="btn btn-sm btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                    <line x1="9" y1="7" x2="10" y2="7" />
+                    <line x1="9" y1="13" x2="15" y2="13" />
+                    <line x1="13" y1="17" x2="15" y2="17" />
+                    </svg>
+                </button>
             </div>
             </h3>
             
@@ -144,7 +154,23 @@ export default {
             }).catch((error)=>{
                 console.log(error)
             });
-
+      },
+        downloadExcel(){ 
+            axios({
+                url: '/api/excel-all',
+                method: 'POST',
+                responseType: 'blob',
+            }).then((response) => {
+                var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                var fileLink = document.createElement('a');
+                fileLink.href = fileURL;
+                fileLink.setAttribute('download', `example.excel`);
+                document.body.appendChild(fileLink);
+                fileLink.click();
+                this.filedownloading = false
+            }).catch((error)=>{
+                console.log(error)
+            });
       },
       searchTag() {
           axios.get('/api/tags?search='+ this.search)

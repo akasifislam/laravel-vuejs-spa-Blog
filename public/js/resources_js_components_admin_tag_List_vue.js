@@ -103,6 +103,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -160,11 +170,30 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     },
-    searchTag: function searchTag() {
+    downloadExcel: function downloadExcel() {
       var _this3 = this;
 
+      axios__WEBPACK_IMPORTED_MODULE_0___default()({
+        url: '/api/excel-all',
+        method: 'POST',
+        responseType: 'blob'
+      }).then(function (response) {
+        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+        var fileLink = document.createElement('a');
+        fileLink.href = fileURL;
+        fileLink.setAttribute('download', "example.excel");
+        document.body.appendChild(fileLink);
+        fileLink.click();
+        _this3.filedownloading = false;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    searchTag: function searchTag() {
+      var _this4 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags?search=' + this.search).then(function (response) {
-        _this3.$store.commit('UPADATE_TAG', response.data.data);
+        _this4.$store.commit('UPADATE_TAG', response.data.data);
       });
     }
   }
@@ -412,6 +441,71 @@ var render = function() {
                               d:
                                 "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
                             }
+                          })
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-sm btn-primary",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.downloadExcel.apply(null, arguments)
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass:
+                            "icon icon-tabler icon-tabler-file-invoice",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "24",
+                            height: "24",
+                            viewBox: "0 0 24 24",
+                            "stroke-width": "1.5",
+                            stroke: "#6f32be",
+                            fill: "none",
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              stroke: "none",
+                              d: "M0 0h24v24H0z",
+                              fill: "none"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: { d: "M14 3v4a1 1 0 0 0 1 1h4" }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "9", y1: "7", x2: "10", y2: "7" }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "9", y1: "13", x2: "15", y2: "13" }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "13", y1: "17", x2: "15", y2: "17" }
                           })
                         ]
                       )
