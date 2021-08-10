@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategryController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
@@ -28,6 +29,17 @@ Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('
 Route::post('/tag-all', [PdfController::class, 'getAllTagsPdf']);
 Route::get('/tag-all-pdf', [PdfController::class, 'downloadTagPdf']);
 Route::post('/excel-all', [ExportController::class, 'downloadExcel']);
+
+
+
+
+
+
+
+
+// =================== DropZone ================ 
+
+Route::post('sendmessage', [MessageController::class, 'store']);
 
 
 

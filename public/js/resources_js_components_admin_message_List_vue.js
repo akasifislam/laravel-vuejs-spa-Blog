@@ -15,6 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -103,7 +106,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("dfkljgydfkughdjghj")])
+  return _c(
+    "div",
+    {},
+    [
+      _c("h1", [_vm._v("dfkljgydfkughdjghj")]),
+      _vm._v(" "),
+      _c(
+        "router-link",
+        {
+          staticClass: "btn btn-success",
+          attrs: { to: { name: "message-create" } }
+        },
+        [_vm._v("create")]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
