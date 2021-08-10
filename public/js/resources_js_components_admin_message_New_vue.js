@@ -88,7 +88,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         url: 'http://127.0.0.1:8000/api/sendmessage',
         thumbnailWidth: 150,
         maxFilesize: 4,
-        parallelUploads: 1
+        parallelUploads: 3,
+        maxFiles: 3,
+        uploadMultiple: true
       }
     };
   },

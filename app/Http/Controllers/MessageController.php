@@ -19,16 +19,31 @@ class MessageController extends Controller
 
         if ($request->file('file')) {
 
-            // get name of file
-            $file = $request->file('file');
-            $fileName =  $file->getClientOriginalName();
+            //*************/ get name of file
+            // $file = $request->file('file');
+            // $fileName =  $file->getClientOriginalName();
 
-            $fileName = str_replace(' ', '', $fileName);
-            $path = $file->storeAs('uploads', $fileName);
-            // $path = $request->file('file')->store('uploads');
-            if ($path) {
-                return response()->json(['message' => 'route reached'], 200);
+            // $fileName = str_replace(' ', '', $fileName);
+            // $path = $file->storeAs('uploads', $fileName);
+            // if ($path) {
+            //     return response()->json(['message' => 'route reached'], 200);
+            // }
+            /**
+             * multiple file upload
+             * multiple image upload
+             */
+            $files = $request->file('file');
+            if (!is_array($files)) {
+                $files = [$files];
             }
+            // loop the array
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                $fileName =  $file->getClientOriginalName();
+                $fileName = str_replace(' ', '', $fileName);
+                $file->storeAs('uploads', $fileName);
+            }
+            return response()->json(['message' => 'route reached'], 200);
         } else {
             return response()->json(["message" => 'error uploading'], 503);
         }
