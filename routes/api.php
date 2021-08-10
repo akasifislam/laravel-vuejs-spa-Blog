@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategryController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
@@ -23,10 +24,8 @@ Route::apiResource('tags', TagController::class);
 Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('tags.export');
 
 
-
-
-
-
+Route::post('/tag-all', [PdfController::class, 'getAllTagsPdf']);
+Route::get('/tag-all-pdf', [PdfController::class, 'downloadTagPdf']);
 
 
 

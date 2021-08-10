@@ -90,6 +90,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -128,14 +141,30 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
-    printInvoice: function printInvoice() {
-      window.print();
-    },
-    searchTag: function searchTag() {
+    downloadPdf: function downloadPdf() {
       var _this2 = this;
 
+      axios__WEBPACK_IMPORTED_MODULE_0___default()({
+        url: '/api/tag-all',
+        method: 'POST',
+        responseType: 'blob'
+      }).then(function (response) {
+        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+        var fileLink = document.createElement('a');
+        fileLink.href = fileURL;
+        fileLink.setAttribute('download', "example.pdf");
+        document.body.appendChild(fileLink);
+        fileLink.click();
+        _this2.filedownloading = false;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    searchTag: function searchTag() {
+      var _this3 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags?search=' + this.search).then(function (response) {
-        _this2.$store.commit('UPADATE_TAG', response.data.data);
+        _this3.$store.commit('UPADATE_TAG', response.data.data);
       });
     }
   }
@@ -298,7 +327,43 @@ var render = function() {
                       staticClass: "btn btn-primary btn-sm",
                       attrs: { to: { name: "tag-create" } }
                     },
-                    [_vm._v("create tag")]
+                    [
+                      _vm._v("create\n\n                   "),
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "icon icon-tabler icon-tabler-plus",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "24",
+                            height: "24",
+                            viewBox: "0 0 24 24",
+                            "stroke-width": "1.5",
+                            stroke: "#00bfd8",
+                            fill: "none",
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              stroke: "none",
+                              d: "M0 0h24v24H0z",
+                              fill: "none"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "12", y1: "5", x2: "12", y2: "19" }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "5", y1: "12", x2: "19", y2: "12" }
+                          })
+                        ]
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -308,11 +373,49 @@ var render = function() {
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          return _vm.printInvoice.apply(null, arguments)
+                          return _vm.downloadPdf.apply(null, arguments)
                         }
                       }
                     },
-                    [_vm._v("PDF")]
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "icon icon-tabler icon-tabler-file",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "24",
+                            height: "24",
+                            viewBox: "0 0 24 24",
+                            "stroke-width": "1.5",
+                            stroke: "#6f32be",
+                            fill: "none",
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              stroke: "none",
+                              d: "M0 0h24v24H0z",
+                              fill: "none"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: { d: "M14 3v4a1 1 0 0 0 1 1h4" }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                            }
+                          })
+                        ]
+                      )
+                    ]
                   )
                 ],
                 1

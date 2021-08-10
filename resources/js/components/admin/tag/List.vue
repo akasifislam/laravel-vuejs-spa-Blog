@@ -19,8 +19,21 @@
         <div class="card-header">
             <h3 class="card-title">
                 <div class="card-tools">
-                <router-link :to="{ name:'tag-create' }" class="btn btn-primary btn-sm">create tag</router-link>
-                <button @click.prevent="printInvoice" class="btn btn-sm btn-primary">PDF</button>
+                <router-link :to="{ name:'tag-create' }" class="btn btn-primary btn-sm">create
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                </router-link>
+                <button @click.prevent="downloadPdf" class="btn btn-sm btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                    </svg>
+                </button>
             </div>
             </h3>
             
@@ -115,9 +128,22 @@ export default {
                 }
             })
         },
-        printInvoice(){ 
-
-        window.print()
+        downloadPdf(){ 
+            axios({
+                url: '/api/tag-all',
+                method: 'POST',
+                responseType: 'blob',
+            }).then((response) => {
+                var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                var fileLink = document.createElement('a');
+                fileLink.href = fileURL;
+                fileLink.setAttribute('download', `example.pdf`);
+                document.body.appendChild(fileLink);
+                fileLink.click();
+                this.filedownloading = false
+            }).catch((error)=>{
+                console.log(error)
+            });
 
       },
       searchTag() {

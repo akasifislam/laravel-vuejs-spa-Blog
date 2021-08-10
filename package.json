@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@ocrv/vue-tailwind-pagination": "0.0.4",
         "admin-lte": "^3.0.0-alpha.2",
         "laravel-vue-pagination": "^2.3.1",
         "moment": "^2.29.1",
