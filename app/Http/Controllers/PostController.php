@@ -44,14 +44,13 @@ class PostController extends Controller
             $extention = 'jpg';
         else
             $extention = 'png';
-
         $fileName = time() . '_' . uniqid() . '.' . $extention;
-
         $path = public_path() . '/' . $fileName;
 
         file_put_contents($path, $decoded);
 
         $this->validate($request, [
+            'photo' => 'required',
             'title' => 'required|string|min:5',
             'description' => 'required|string|min:10'
         ]);
@@ -63,7 +62,7 @@ class PostController extends Controller
         ]);
         $post->save();
 
-        return response()->json('Category created!');
+        return response()->json('Post created!');
     }
 
     /**

@@ -46,4 +46,19 @@ export const routes = [
         name: 'tag-edit',
         component: ()=> import('./components/admin/tag/Edit.vue'),
     },
+
+    // ================ Message ==============================  
+
+    {
+        path: '/message-list',
+        name: 'message-list',
+        component: ()=> import('./components/admin/message/List.vue'),
+    },
+    {
+        path: '/message-create',
+        name: 'message-create',
+        component: ()=> import('./components/admin/message/New.vue'),
+    },
+
+
   ]

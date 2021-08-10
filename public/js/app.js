@@ -2122,6 +2122,19 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_admin_tag_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/tag/Edit.vue */ "./resources/js/components/admin/tag/Edit.vue"));
   }
+}, // ================ Message ==============================  
+{
+  path: '/message-list',
+  name: 'message-list',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_admin_message_List_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/message/List.vue */ "./resources/js/components/admin/message/List.vue"));
+  }
+}, {
+  path: '/message-create',
+  name: 'message-create',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_admin_message_New_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/message/New.vue */ "./resources/js/components/admin/message/New.vue"));
+  }
 }];
 
 /***/ }),
@@ -79693,7 +79706,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
