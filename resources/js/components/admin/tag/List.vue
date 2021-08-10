@@ -144,7 +144,7 @@ export default {
                 method: 'POST',
                 responseType: 'blob',
             }).then((response) => {
-                var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                var fileURL = window.URL.createObjectURL(new Blob([response.data.data]));
                 var fileLink = document.createElement('a');
                 fileLink.href = fileURL;
                 fileLink.setAttribute('download', `example.pdf`);
@@ -161,7 +161,7 @@ export default {
                 method: 'POST',
                 responseType: 'blob',
             }).then((response) => {
-                var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                var fileURL = window.URL.createObjectURL(new Blob([response.data.data]));
                 var fileLink = document.createElement('a');
                 fileLink.href = fileURL;
                 fileLink.setAttribute('download', `example.excel`);

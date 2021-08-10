@@ -117,14 +117,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     changePhoto: function changePhoto(event) {
       var _this2 = this;
 
+      // console.log(1);
       var file = event.target.files[0];
-      var reader = new FileReader();
 
-      reader.onload = function (event) {
-        _this2.form.photo = event.target.result;
-      };
+      if (file.size > 10000000000000) {
+        console.log("image small");
+      } else {
+        var reader = new FileReader();
 
-      reader.readAsDataURL(file);
+        reader.onload = function (event) {
+          _this2.form.photo = event.target.result;
+          console.log(event.target.result);
+        };
+
+        reader.readAsDataURL(file);
+      }
     }
   }
 });

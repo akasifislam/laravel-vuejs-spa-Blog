@@ -64,14 +64,21 @@ export default {
       })
     },
     changePhoto(event){
+      // console.log(1);
       let file = event.target.files[0];
-      let reader = new FileReader();
+     if (file.size>10000000000000) {
+       console.log("image small");
+     } else {
+        let reader = new FileReader();
 
       reader.onload = event => {
         this.form.photo = event.target.result
+        console.log(event.target.result);
       };
 
       reader.readAsDataURL(file);
+     }
+
     }
   }
 }

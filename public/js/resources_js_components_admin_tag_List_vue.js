@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
         method: 'POST',
         responseType: 'blob'
       }).then(function (response) {
-        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+        var fileURL = window.URL.createObjectURL(new Blob([response.data.data]));
         var fileLink = document.createElement('a');
         fileLink.href = fileURL;
         fileLink.setAttribute('download', "example.pdf");
@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
         method: 'POST',
         responseType: 'blob'
       }).then(function (response) {
-        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+        var fileURL = window.URL.createObjectURL(new Blob([response.data.data]));
         var fileLink = document.createElement('a');
         fileLink.href = fileURL;
         fileLink.setAttribute('download', "example.excel");
