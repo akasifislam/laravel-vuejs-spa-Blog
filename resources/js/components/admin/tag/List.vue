@@ -140,17 +140,16 @@ export default {
         },
         downloadPdf(){ 
             axios({
-                url: '/api/tag-all',
+                url: '/api/tag-all-pdf',
                 method: 'POST',
                 responseType: 'blob',
             }).then((response) => {
-                var fileURL = window.URL.createObjectURL(new Blob([response.data.data]));
+                var fileURL = window.URL.createObjectURL(new Blob([response.data]));
                 var fileLink = document.createElement('a');
                 fileLink.href = fileURL;
                 fileLink.setAttribute('download', `example.pdf`);
                 document.body.appendChild(fileLink);
                 fileLink.click();
-                this.filedownloading = false
             }).catch((error)=>{
                 console.log(error)
             });

@@ -26,8 +26,8 @@ Route::apiResource('tags', TagController::class);
 Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('tags.export');
 
 
-Route::post('/tag-all', [PdfController::class, 'getAllTagsPdf']);
-Route::get('/tag-all-pdf', [PdfController::class, 'downloadTagPdf']);
+// Route::post('/tag-all', [PdfController::class, 'getAllTagsPdf']);
+Route::post('/tag-all-pdf', [PdfController::class, 'downloadTagPdf']);
 Route::post('/excel-all', [ExportController::class, 'downloadExcel']);
 
 

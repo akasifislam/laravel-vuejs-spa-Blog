@@ -29,11 +29,11 @@ tr:nth-child(even) {
     <th>Name</th>
     <th>Created By</th>
   </tr>
-    @foreach ($tags as $key=>$tag)   
+    @foreach ($data as $key=>$tag)   
     <tr>
       <td> {{ $key+1 }} </td>
       <td>{{ $tag->name }}</td>
-      <td> aaa </td>
+      <td>{{ $tag->created_at }}</td>
     </tr>
     @endforeach
 </table>

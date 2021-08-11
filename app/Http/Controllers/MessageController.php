@@ -43,7 +43,7 @@ class MessageController extends Controller
                 $fileName = str_replace(' ', '', $fileName);
                 $file->storeAs('uploads', $fileName);
             }
-            return response()->json(['message' => 'route reached'], 200);
+            return response()->json(['message' => 'file upload', 'data' => $request], 200);
         } else {
             return response()->json(["message" => 'error uploading'], 503);
         }

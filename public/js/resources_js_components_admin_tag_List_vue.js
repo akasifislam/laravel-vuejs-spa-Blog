@@ -152,26 +152,23 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     downloadPdf: function downloadPdf() {
-      var _this2 = this;
-
       axios__WEBPACK_IMPORTED_MODULE_0___default()({
-        url: '/api/tag-all',
+        url: '/api/tag-all-pdf',
         method: 'POST',
         responseType: 'blob'
       }).then(function (response) {
-        var fileURL = window.URL.createObjectURL(new Blob([response.data.data]));
+        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
         var fileLink = document.createElement('a');
         fileLink.href = fileURL;
         fileLink.setAttribute('download', "example.pdf");
         document.body.appendChild(fileLink);
         fileLink.click();
-        _this2.filedownloading = false;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     downloadExcel: function downloadExcel() {
-      var _this3 = this;
+      var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()({
         url: '/api/excel-all',
@@ -184,16 +181,16 @@ __webpack_require__.r(__webpack_exports__);
         fileLink.setAttribute('download', "example.excel");
         document.body.appendChild(fileLink);
         fileLink.click();
-        _this3.filedownloading = false;
+        _this2.filedownloading = false;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     searchTag: function searchTag() {
-      var _this4 = this;
+      var _this3 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags?search=' + this.search).then(function (response) {
-        _this4.$store.commit('UPADATE_TAG', response.data.data);
+        _this3.$store.commit('UPADATE_TAG', response.data.data);
       });
     }
   }
