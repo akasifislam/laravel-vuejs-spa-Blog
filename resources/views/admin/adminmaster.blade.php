@@ -196,6 +196,14 @@
               </p>
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link :to="{ name:'blog-list' }" class="nav-link">
+              <i class="nav-icon fa fa-th"></i>
+              <p>
+                Blog
+              </p>
+            </router-link>
+          </li>
           {{-- <li class="nav-item">
             <router-link :to="{ name:'message-list' }" class="nav-link">
               <i class="nav-icon fa fa-th"></i>

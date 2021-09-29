@@ -47,6 +47,27 @@ export const routes = [
         component: ()=> import('./components/admin/tag/Edit.vue'),
     },
 
+    // =============== Tag route ============ 
+    {
+        path: '/blog-list',
+        name: 'blog-list',
+        component: ()=> import('./components/admin/blog/List.vue'),
+    },
+    {
+        path: '/blog-create',
+        name: 'blog-create',
+        component: ()=> import('./components/admin/blog/New.vue'),
+    },
+    {
+        path: '/blog-edit/:id',
+        name: 'blog-edit',
+        component: ()=> import('./components/admin/blog/Edit.vue'),
+    },
+
+
+
+
+
     // ================ Message ==============================  
 
     {

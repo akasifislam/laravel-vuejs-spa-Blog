@@ -2345,6 +2345,25 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_admin_tag_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/tag/Edit.vue */ "./resources/js/components/admin/tag/Edit.vue"));
   }
+}, // =============== Tag route ============ 
+{
+  path: '/blog-list',
+  name: 'blog-list',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_admin_blog_List_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/blog/List.vue */ "./resources/js/components/admin/blog/List.vue"));
+  }
+}, {
+  path: '/blog-create',
+  name: 'blog-create',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_admin_blog_New_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/blog/New.vue */ "./resources/js/components/admin/blog/New.vue"));
+  }
+}, {
+  path: '/blog-edit/:id',
+  name: 'blog-edit',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_admin_blog_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/admin/blog/Edit.vue */ "./resources/js/components/admin/blog/Edit.vue"));
+  }
 }, // ================ Message ==============================  
 {
   path: '/message-list',
@@ -79939,7 +79958,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_blog_List_vue":1,"resources_js_components_admin_blog_New_vue":1,"resources_js_components_admin_blog_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
