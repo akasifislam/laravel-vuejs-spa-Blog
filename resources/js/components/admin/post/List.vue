@@ -17,14 +17,16 @@
                         <th scope="col">SL</th>
                         <th scope="col">Title</th>  
                         <th scope="col">Description</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="(post,key) in posts" :key="key" >
-                            <th scope="row">1</th>
+                            <th scope="row"> {{ key+1 }} </th>
                             <td> {{ post.title }} </td>
                             <td>{{ post.description}}</td>
+                            <td> <img style="width:90px; height:90px;" :src="post.photo" alt=""> </td>
                             <td>
                                 <a href="" class="btn btn-sm btn-success">edit</a>
                                 <a href="" class="btn btn-sm btn-danger">delete</a>
