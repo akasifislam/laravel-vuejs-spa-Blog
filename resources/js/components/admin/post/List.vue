@@ -25,7 +25,7 @@
                         <tr v-for="(post,key) in posts" :key="key" >
                             <th scope="row"> {{ key+1 }} </th>
                             <td> {{ post.title }} </td>
-                            <td>{{ post.description}}</td>
+                            <td>{{ post.description | sortlength(45) }}</td>
                             <td> <img style="width:90px; height:90px;" :src="post.photo" alt=""> </td>
                             <td>
                                 <a href="" class="btn btn-sm btn-success">edit</a>

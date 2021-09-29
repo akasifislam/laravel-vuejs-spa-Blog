@@ -2275,6 +2275,9 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].filter('timeformat', function (arg) {
   return moment(arg).format("DD-MMM-YY");
 });
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].filter('sortlength', function (text, length, suffix) {
+  return text.substring(0, length) + suffix;
+});
 
 /***/ }),
 
