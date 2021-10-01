@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\blog;
 use App\Models\Categry;
 use App\Models\Post;
 use App\Models\Tag;
@@ -25,5 +26,6 @@ class DatabaseSeeder extends Seeder
         Categry::factory(30)->create();
         Post::factory(20)->create();
         Tag::factory(50)->create();
+        Blog::factory(50)->create();
     }
 }

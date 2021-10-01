@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('posts', PostController::class);
 Route::apiResource('categories', CategryController::class);
 Route::apiResource('tags', TagController::class);
-Route::apiResource('blog', BlogController::class);
+Route::apiResource('blogs', BlogController::class);
 
 
 Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('tags.export');

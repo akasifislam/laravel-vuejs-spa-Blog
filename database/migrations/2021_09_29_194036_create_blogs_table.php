@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('photo')->default('zekonoakrtaPHOTO.jpg')->nullable();
             $table->timestamps();
         });
     }

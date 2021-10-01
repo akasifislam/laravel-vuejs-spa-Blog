@@ -22,7 +22,11 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'cat_id' => rand(1, 10),
+            'user_id' => rand(1, 10),
+            'title' => $this->faker->sentence,
+            'description' => $this->faker->paragraph,
+            'photo' => $this->faker->imageUrl
         ];
     }
 }

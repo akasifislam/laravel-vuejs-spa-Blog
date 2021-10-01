@@ -1,7 +1,7 @@
 <template>
  <div class="container">
     <div class="row">
-        <div class="col-10 offset-1">
+        <div class="col-12">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Category List Table</h3>
@@ -59,7 +59,16 @@
 
 <script>
 export default {
+  name: "List",
+  mounted() {
+    this.$store.dispatch('loadBlog');
+  },
+  computed:{
 
+  },
+  methods:{
+
+  }
 }
 </script>
 

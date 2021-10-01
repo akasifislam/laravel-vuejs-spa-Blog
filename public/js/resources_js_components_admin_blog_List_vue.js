@@ -70,7 +70,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "List",
+  mounted: function mounted() {
+    this.$store.dispatch('loadBlog');
+  },
+  computed: {},
+  methods: {}
+});
 
 /***/ }),
 
@@ -160,7 +167,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-10 offset-1" }, [
+      _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
             _c("h3", { staticClass: "card-title" }, [
