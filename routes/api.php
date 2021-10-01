@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategryController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\MessageController;
@@ -21,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('posts', PostController::class);
 Route::apiResource('categories', CategryController::class);
 Route::apiResource('tags', TagController::class);
+Route::apiResource('blog', BlogController::class);
 
 
 Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('tags.export');
