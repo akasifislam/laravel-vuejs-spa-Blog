@@ -5,6 +5,7 @@ export default {
         categories: [],
         posts:[],
         tags:[],
+        blogs:[],
     },
     getters:{
         getCategories(state)
@@ -18,6 +19,10 @@ export default {
         getTags(state)
         {
             return state.tags
+        },
+        getBlogs(state)
+        {
+            return state.blogs
         }
     },
     mutations:{
@@ -39,6 +44,10 @@ export default {
         UPADATE_TAG(state,data){
             state.tags = data
         },
+        SET_BlOGS(state,data){
+            state.blogs = data
+        }
+
     },
     actions:{
         loadCategories({commit}){
@@ -54,6 +63,11 @@ export default {
         loadTags({commit}) {
             axios.get('/api/tags').then((response) => {
                 commit('SET_TAGS',response.data.data)
+            })
+        },
+        loadBlogs({commit}){
+            axios.get('/api/blogs').then((response) => {
+                commit('SET_BlOGS',response.data);
             })
         }
     },

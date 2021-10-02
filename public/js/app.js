@@ -2399,7 +2399,8 @@ __webpack_require__.r(__webpack_exports__);
   state: {
     categories: [],
     posts: [],
-    tags: []
+    tags: [],
+    blogs: []
   },
   getters: {
     getCategories: function getCategories(state) {
@@ -2410,6 +2411,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getTags: function getTags(state) {
       return state.tags;
+    },
+    getBlogs: function getBlogs(state) {
+      return state.blogs;
     }
   },
   mutations: {
@@ -2430,6 +2434,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     UPADATE_TAG: function UPADATE_TAG(state, data) {
       state.tags = data;
+    },
+    SET_BlOGS: function SET_BlOGS(state, data) {
+      state.blogs = data;
     }
   },
   actions: {
@@ -2449,6 +2456,12 @@ __webpack_require__.r(__webpack_exports__);
       var commit = _ref3.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tags').then(function (response) {
         commit('SET_TAGS', response.data.data);
+      });
+    },
+    loadBlogs: function loadBlogs(_ref4) {
+      var commit = _ref4.commit;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/blogs').then(function (response) {
+        commit('SET_BlOGS', response.data);
       });
     }
   }

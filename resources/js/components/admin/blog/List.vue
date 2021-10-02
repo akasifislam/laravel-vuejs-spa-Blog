@@ -24,12 +24,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>vfsfbh</td>
-                            <td>sdfsdf</td>
-                            <td>sdfsdf</td>
-                            <td>sdfsdf</td>
+                        <tr v-for="(blog,index) in blogs" :key="index">
+                            <td> {{ index+1 }} </td>
+                            <td> kgdfjg </td>
+                            <td> aaaa </td>
+                            <td> {{  blog.title  }} </td>
+                            <td>{{  blog.description  }}</td>
                             <td>sdfsdf</td>
                             <td>
                               <a href="" class="">edit</a>
@@ -59,16 +59,16 @@
 
 <script>
 export default {
-  name: "List",
-  mounted() {
-    this.$store.dispatch('loadBlog');
-  },
-  computed:{
-
-  },
-  methods:{
-
-  }
+    computed:{
+       blogs(){
+           return this.$store.getters.getBlogs
+       }
+    },
+    created(){
+        // this.$Progress.start();
+        this.$store.dispatch("loadBlogs")
+        // this.$Progress.finish();
+    }
 }
 </script>
 

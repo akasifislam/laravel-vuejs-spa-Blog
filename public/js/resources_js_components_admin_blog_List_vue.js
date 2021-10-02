@@ -71,12 +71,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "List",
-  mounted: function mounted() {
-    this.$store.dispatch('loadBlog');
+  computed: {
+    blogs: function blogs() {
+      return this.$store.getters.getBlogs;
+    }
   },
-  computed: {},
-  methods: {}
+  created: function created() {
+    // this.$Progress.start();
+    this.$store.dispatch("loadBlogs"); // this.$Progress.finish();
+  }
 });
 
 /***/ }),
@@ -192,7 +195,38 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
-            _vm._m(0),
+            _c(
+              "table",
+              {
+                staticClass:
+                  "table table-bordered table-striped table-sm table-hover"
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.blogs, function(blog, index) {
+                    return _c("tr", { key: index }, [
+                      _c("td", [_vm._v(" " + _vm._s(index + 1) + " ")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(" kgdfjg ")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(" aaaa ")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(" " + _vm._s(blog.title) + " ")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(blog.description))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("sdfsdf")]),
+                      _vm._v(" "),
+                      _vm._m(1, true)
+                    ])
+                  }),
+                  0
+                )
+              ]
+            ),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
@@ -234,53 +268,33 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      {
-        staticClass: "table table-bordered table-striped table-sm table-hover"
-      },
-      [
-        _c("thead", [
-          _c("tr", [
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("SL")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("User")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Category")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Description")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Photo")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("SL")]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("1")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("vfsfbh")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("sdfsdf")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("sdfsdf")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("sdfsdf")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("sdfsdf")]),
-            _vm._v(" "),
-            _c("td", [
-              _c("a", { attrs: { href: "" } }, [_vm._v("edit")]),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "" } }, [_vm._v("delete")])
-            ])
-          ])
-        ])
-      ]
-    )
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("User")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Category")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Description")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Photo")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("a", { attrs: { href: "" } }, [_vm._v("edit")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "" } }, [_vm._v("delete")])
+    ])
   }
 ]
 render._withStripped = true
