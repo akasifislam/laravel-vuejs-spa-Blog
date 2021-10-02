@@ -21,12 +21,14 @@ class BlogFactory extends Factory
      */
     public function definition()
     {
+        $id = rand(30, 600);
+        $image = 'https://picsum.photos/id/' . $id . '/700/600';
         return [
             'cat_id' => rand(1, 10),
             'user_id' => rand(1, 10),
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
-            'photo' => $this->faker->imageUrl
+            'photo' => $image
         ];
     }
 }

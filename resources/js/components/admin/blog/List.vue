@@ -29,8 +29,8 @@
                             <td> kgdfjg </td>
                             <td> aaaa </td>
                             <td> {{  blog.title  }} </td>
-                            <td>{{  blog.description  }}</td>
-                            <td>sdfsdf</td>
+                            <td>{{  blog.description | sortlength(40,'...')  }}</td>
+                            <td> <img :src="blog.photo" alt="" style="width:100px;hight:75px" > </td>
                             <td>
                               <a href="" class="">edit</a>
                               <a href="" class="">delete</a>

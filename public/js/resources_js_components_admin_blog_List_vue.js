@@ -216,9 +216,20 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(" " + _vm._s(blog.title) + " ")]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(blog.description))]),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(
+                            _vm._f("sortlength")(blog.description, 40, "...")
+                          )
+                        )
+                      ]),
                       _vm._v(" "),
-                      _c("td", [_vm._v("sdfsdf")]),
+                      _c("td", [
+                        _c("img", {
+                          staticStyle: { width: "100px", hight: "75px" },
+                          attrs: { src: blog.photo, alt: "" }
+                        })
+                      ]),
                       _vm._v(" "),
                       _vm._m(1, true)
                     ])
