@@ -15,4 +15,10 @@ class Categry extends Model
     {
         return $this->hasMany(Post::class, 'id');
     }
+
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class, 'id');
+    }
 }

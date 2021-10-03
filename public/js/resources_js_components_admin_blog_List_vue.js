@@ -210,9 +210,9 @@ var render = function() {
                     return _c("tr", { key: index }, [
                       _c("td", [_vm._v(" " + _vm._s(index + 1) + " ")]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(" kgdfjg ")]),
+                      _c("td", [_vm._v(" " + _vm._s(blog.user.name) + " ")]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(" aaaa ")]),
+                      _c("td", [_vm._v(_vm._s(blog.category.cat_name) + "  ")]),
                       _vm._v(" "),
                       _c("td", [_vm._v(" " + _vm._s(blog.title) + " ")]),
                       _vm._v(" "),

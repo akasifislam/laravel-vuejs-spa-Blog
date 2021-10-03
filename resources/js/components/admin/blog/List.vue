@@ -26,8 +26,8 @@
                     <tbody>
                         <tr v-for="(blog,index) in blogs" :key="index">
                             <td> {{ index+1 }} </td>
-                            <td> kgdfjg </td>
-                            <td> aaaa </td>
+                            <td> {{ blog.user.name }} </td>
+                            <td>{{ blog.category.cat_name }}  </td>
                             <td> {{  blog.title  }} </td>
                             <td>{{  blog.description | sortlength(40,'...')  }}</td>
                             <td> <img :src="blog.photo" alt="" style="width:100px;hight:75px" > </td>

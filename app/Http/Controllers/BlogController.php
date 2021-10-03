@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest('id')->get();
+        $blogs = Blog::with('category', 'user')->get();
         return response()->json($blogs, 200);
     }
 
