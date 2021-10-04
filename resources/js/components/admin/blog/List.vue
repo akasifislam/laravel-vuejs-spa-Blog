@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Category List Table</h3>
                     <div class="card-tools">
-                        <router-link to="/category-add" class="btn btn-primary btn-sm">create category</router-link>
+                        <router-link to="/blog-create" class="btn btn-primary btn-sm">create blog</router-link>
                     </div>
                 </div>
                 <!-- /.card-header -->

@@ -185,9 +185,9 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "btn btn-primary btn-sm",
-                    attrs: { to: "/category-add" }
+                    attrs: { to: "/blog-create" }
                   },
-                  [_vm._v("create category")]
+                  [_vm._v("create blog")]
                 )
               ],
               1
