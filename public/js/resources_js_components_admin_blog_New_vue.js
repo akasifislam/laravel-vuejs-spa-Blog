@@ -64,7 +64,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.categories();
+    this.$store.dispatch("loadCategories");
   },
   computed: {
     categories: function categories() {

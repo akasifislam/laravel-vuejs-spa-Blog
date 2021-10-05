@@ -49,7 +49,7 @@ export default {
     })
   }),
   mounted() {
-    this.categories();
+    this.$store.dispatch("loadCategories")
   },
   computed:{
     categories(){
