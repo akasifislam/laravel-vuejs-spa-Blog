@@ -14,11 +14,18 @@
             <form>
             <div class="form-group">
                 <label for="title">Blog Title</label>
-                <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
+                <input type="text" v-model="form.title"  class="form-control" :class="{ 'is-invalid': form.errors.has('title') }" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
             </div>
             <div class="form-group">
                 <label for="description">Blog Description</label>
-                <textarea class="form-control" rows="8" id="description" name="description" aria-describedby="emailHelp" placeholder="Enter Description"></textarea>
+                <textarea class="form-control" :class="{ 'is-invalid': form.errors.has('description') }" v-model="form.description"  rows="8" id="description" name="description" aria-describedby="emailHelp" placeholder="Enter Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cat_id">Select Category</label>
+                <select class="form-control" name="cat_id" id="cat_id">
+                  <option value="">najhj</option>
+                  <option v-for="category in categories" :key="category.id" value=""> {{ category.cat_name }} </option>
+                </select>
             </div>
             <button type="submit" class="btn btn-success">submit</button>
             </form>
@@ -31,25 +38,29 @@
 </template>
 
 <script>
+import Form from 'vform'
 export default {
-  data() {
-    return {
-      form: new Form({
-        title: '',
-        description: '',
-        category_id: '',
-        photo: ''
-      })
-    }
-  },
+  data: () => ({
+    form: new Form({
+      title: '',
+      description: '',
+      cat_id: '',
+      photo: '',
+    })
+  }),
   mounted() {
-
+    this.categories();
+  },
+  computed:{
+    categories(){
+        return this.$store.getters.getCategories
+    }
   },
   created:{
 
   },
   methods:{
-
+    // 
   }
 }
 </script>
