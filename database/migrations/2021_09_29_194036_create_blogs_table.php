@@ -16,7 +16,7 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->integer('cat_id')->unsigned()->nullable();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->default(1)->nullable();
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->string('photo')->default('zekonoakrtaPHOTO.jpg')->nullable();

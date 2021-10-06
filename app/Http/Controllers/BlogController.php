@@ -36,7 +36,32 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $exploded_image = explode(",", $request->photo);
+        $decoded = base64_decode($exploded_image[1]);
+        if (str_contains($exploded_image[0], 'jpeg'))
+            $extention = 'jpg';
+        else
+            $extention = 'png';
+        $fileName = time() . '_' . uniqid() . '.' . $extention;
+        $path = public_path() . '/' . $fileName;
+
+        file_put_contents($path, $decoded);
+
+        $this->validate($request, [
+            'photo' => 'required',
+            'title' => 'required|string|min:5',
+            'description' => 'required|string|min:10'
+        ]);
+
+        $post = new Blog([
+            'title' => $request->title,
+            'description' => $request->description,
+            'cat_id' => $request->cat_id,
+            'photo' => $fileName,
+        ]);
+        $post->save();
+
+        return response()->json('Post created!');
     }
 
     /**

@@ -75,7 +75,6 @@ export default {
         this.form.photo = event.target.result
         console.log(event.target.result);
       };
-
       reader.readAsDataURL(file);
      }
 
