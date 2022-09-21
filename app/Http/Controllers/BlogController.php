@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::with('category', 'user')->get();
+        $blogs = Blog::latest('id')->with('category', 'user')->get();
         return response()->json($blogs, 200);
     }
 

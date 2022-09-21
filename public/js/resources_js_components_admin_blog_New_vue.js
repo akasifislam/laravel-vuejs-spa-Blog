@@ -1194,14 +1194,16 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.form.photo,
-                      alt: "dzfgsresgh",
-                      width: "120px",
-                      height: "80px"
-                    }
-                  }),
+                  _vm.form.photo
+                    ? _c("img", {
+                        attrs: {
+                          src: _vm.form.photo,
+                          alt: "dzfgsresgh",
+                          width: "120px",
+                          height: "80px"
+                        }
+                      })
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control",
