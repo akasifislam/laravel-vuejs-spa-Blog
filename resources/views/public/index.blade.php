@@ -41,6 +41,7 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('assets/public') }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     
     <!--modernizr min js here-->
     <script src="{{ asset('assets/public') }}/assets/js/vendor/modernizr-3.7.1.min.js"></script>
@@ -49,7 +50,8 @@
 
 <body>
    
-     <!--header area start-->
+   <div id="app">
+      <!--header area start-->
     
     <!--offcanvas menu area start-->
     <div class="off_canvars_overlay">
@@ -625,9 +627,10 @@
     </header>
     <!--header area end-->
     
-    <h1>
+    {{-- <h1>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, deserunt impedit in excepturi sed non, nihil a corrupti laudantium doloremque quasi amet mollitia possimus officiis illum eligendi ipsam quae animi.
-    </h1>
+    </h1> --}}
+    <home-main></home-main>
    
     <!--footer area start-->
     <footer class="footer_widgets footer_border">
@@ -720,9 +723,10 @@
         </div>  
     </footer>
     <!--footer area end-->
+   </div>
     
-<!-- JS
-============================================ -->
+<!-- JS========== -->
+<script src="{{ asset('js/app.js') }}"></script>
 <!--jquery min js-->
 <script src="{{ asset('assets/public') }}/assets/js/vendor/jquery-3.4.1.min.js"></script>
 <!--popper min js-->

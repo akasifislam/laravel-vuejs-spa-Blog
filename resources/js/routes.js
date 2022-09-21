@@ -82,4 +82,29 @@ export const routes = [
     },
 
 
+
+
+    // =================== Frontend Routeing =====================
+
+    {
+        path:'/',
+        name: 'public-home',
+        component: ()=> import('./components/public/blog/BlogPost.vue'),
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ]
