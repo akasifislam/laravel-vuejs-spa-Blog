@@ -2009,7 +2009,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.component('AdminMain', __webpack_requir
 vue__WEBPACK_IMPORTED_MODULE_1__.default.component('HomeMain', __webpack_require__(/*! ./components/public/PublicMaster.vue */ "./resources/js/components/public/PublicMaster.vue").default);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__.default({
   routes: _routes__WEBPACK_IMPORTED_MODULE_6__.routes,
-  mode: 'history'
+  mode: 'hash'
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
@@ -2186,6 +2186,18 @@ var routes = [{
 {
   path: '/',
   name: 'public-home',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_public_PublicHome_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/PublicHome.vue */ "./resources/js/components/public/PublicHome.vue"));
+  }
+}, {
+  path: '/test-page',
+  name: 'test-page',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_public_blog_TestPost_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/blog/TestPost.vue */ "./resources/js/components/public/blog/TestPost.vue"));
+  }
+}, {
+  path: '/blog-post',
+  name: 'blog-post',
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_public_blog_BlogPost_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/blog/BlogPost.vue */ "./resources/js/components/public/blog/BlogPost.vue"));
   }
@@ -79870,7 +79882,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_blog_List_vue":1,"resources_js_components_admin_blog_New_vue":1,"resources_js_components_admin_blog_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1,"resources_js_components_public_blog_BlogPost_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_blog_List_vue":1,"resources_js_components_admin_blog_New_vue":1,"resources_js_components_admin_blog_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1,"resources_js_components_public_PublicHome_vue":1,"resources_js_components_public_blog_TestPost_vue":1,"resources_js_components_public_blog_BlogPost_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

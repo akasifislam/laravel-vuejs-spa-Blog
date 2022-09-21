@@ -1,5 +1,5 @@
 <template>
-<div class="">
+  <span id="blogpost">
     <!--breadcrumbs area start-->
         <div class="breadcrumbs_area">
             <div class="container">   
@@ -17,7 +17,8 @@
             </div>         
         </div>
         <!--breadcrumbs area end-->
-                <!--blog area start-->
+
+        <!--blog area start-->
         <div class="blog_page_section mt-70">
             <div class="container">
                 <div class="row">
@@ -28,7 +29,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog1.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
@@ -43,7 +44,37 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog2.jpg" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html"> dolor sit amet, elit. Illo iste sed animi quaerat  nobis odit  nulla.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">maxime laborum voluptas minus, est, unde eaque esse tenetur.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog2.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
@@ -58,7 +89,37 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">dolor sit amet, elit. Illo iste sed animi quaerat  nobis odit  nulla.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">maxime laborum voluptas minus, est, unde eaque esse tenetur.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog2.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
@@ -69,11 +130,40 @@
                                         </figure>
                                     </article>
                                 </div>
-
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">dolor sit amet, elit. Illo iste sed animi quaerat  nobis odit  nulla.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">maxime laborum voluptas minus, est, unde eaque esse tenetur.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="col-lg-3 col-md-12">
+                    </div>  
+                    <div class="col-lg-3 col-md-12">
                         <div class="blog_sidebar_widget">
                             <div class="widget_list widget_search">
                                 <div class="widget_title">
@@ -174,13 +264,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
-
+                    </div>
                 </div>
             </div>
         </div>
         <!--blog area end-->
-                <!--blog pagination area start-->
+
+        <!--blog pagination area start-->
         <div class="blog_pagination">
             <div class="container">
                 <div class="row">
@@ -199,9 +289,7 @@
             </div>
         </div>
     <!--blog pagination area end-->
-
-        
-</div>
+    </span>
 </template>
 
 <script>
