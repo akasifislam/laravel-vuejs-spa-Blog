@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategryController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PostController;
@@ -31,6 +32,9 @@ Route::get('tags/export/{tag}', [TagController::class, 'downloadExcel'])->name('
 // Route::post('/tag-all', [PdfController::class, 'getAllTagsPdf']);
 Route::post('/tag-all-pdf', [PdfController::class, 'downloadTagPdf']);
 Route::post('/excel-all', [ExportController::class, 'downloadExcel']);
+
+
+Route::get('/blog-posts', [FrontendController::class, 'blogPosts']);
 
 
 

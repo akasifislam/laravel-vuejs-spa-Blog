@@ -90,180 +90,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogPage',
   components: {
     BlogSidebar: _BlogSidebar_vue__WEBPACK_IMPORTED_MODULE_0__.default
   },
-  data: function data() {
-    return {// 
-    };
+  computed: {
+    blogposts: function blogposts() {
+      return this.$store.getters.getBlogPosts;
+    }
+  },
+  created: function created() {
+    // this.$Progress.start();
+    this.$store.dispatch("loadBlogPosts"); // this.$Progress.finish();
   }
 });
 
@@ -547,7 +387,22 @@ var render = function() {
     _c("div", { staticClass: "blog_page_section mt-70" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(1),
+          _c("div", { staticClass: "col-lg-9 col-md-12" }, [
+            _c("div", { staticClass: "blog_wrapper" }, [
+              _c(
+                "div",
+                { staticClass: "row" },
+                _vm._l(_vm.blogposts, function(post) {
+                  return _c(
+                    "div",
+                    { key: post, staticClass: "col-lg-4 col-md-4 col-sm-6" },
+                    [_vm._m(1, true)]
+                  )
+                }),
+                0
+              )
+            ])
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -591,426 +446,33 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-9 col-md-12" }, [
-      _c("div", { staticClass: "blog_wrapper" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
+    return _c("article", { staticClass: "single_blog" }, [
+      _c("figure", [
+        _c("div", { staticClass: "blog_thumb" }, [
+          _c("a", { attrs: { href: "blog-details.html" } }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
+                alt: ""
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("figcaption", { staticClass: "blog_content" }, [
+          _c("h4", { staticClass: "post_title" }, [
+            _c("a", { attrs: { href: "blog-details.html" } }, [
+              _vm._v(
+                "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
+              )
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-            _c("article", { staticClass: "single_blog" }, [
-              _c("figure", [
-                _c("div", { staticClass: "blog_thumb" }, [
-                  _c("a", { attrs: { href: "blog-details.html" } }, [
-                    _c("img", {
-                      attrs: {
-                        src:
-                          "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                        alt: ""
-                      }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("figcaption", { staticClass: "blog_content" }, [
-                  _c("h4", { staticClass: "post_title" }, [
-                    _c("a", { attrs: { href: "blog-details.html" } }, [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "articles_date" }, [
-                    _c("p", [
-                      _vm._v("23/06/2021 | "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-                    ])
-                  ])
-                ])
-              ])
+          _c("div", { staticClass: "articles_date" }, [
+            _c("p", [
+              _vm._v("23/06/2021 | "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
             ])
           ])
         ])

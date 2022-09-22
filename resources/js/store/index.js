@@ -6,6 +6,7 @@ export default {
         posts:[],
         tags:[],
         blogs:[],
+        blogposts: [],
     },
     getters:{
         getCategories(state)
@@ -23,6 +24,10 @@ export default {
         getBlogs(state)
         {
             return state.blogs
+        },
+        getBlogPosts(state)
+        {
+            return state.blogposts
         }
     },
     mutations:{
@@ -46,6 +51,9 @@ export default {
         },
         SET_BlOGS(state,data){
             state.blogs = data
+        },
+        SET_BlOG_POSTS(state,data){
+            state.blogposts = data
         }
 
     },
@@ -68,6 +76,11 @@ export default {
         loadBlogs({commit}){
             axios.get('/api/blogs').then((response) => {
                 commit('SET_BlOGS',response.data);
+            })
+        },
+        loadBlogPosts({commit}){
+            axios.get('/api/blog-posts').then((response) => {
+                commit('SET_BlOG_POSTS',response.data);
             })
         }
     },
