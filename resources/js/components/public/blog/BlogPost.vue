@@ -8,7 +8,7 @@
                         <div class="breadcrumb_content">
                             <h3>Blog</h3>
                             <ul>
-                                <li><a href="index.html">home</a></li>
+                                <li><router-link :to="{ name:'public-home' }">home</router-link></li>
                                 <li>blog</li>
                             </ul>
                         </div>
@@ -27,13 +27,18 @@
                                 <div v-for="post in blogposts" :key="post" class="col-lg-4 col-md-4 col-sm-6">
                                     <article class="single_blog">
                                         <figure>
-                                            <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            <div class="blog_thumb" v-if="post.photo">
+                                                <a href="blog-details.html"><img :src="post.photo" alt=""></a>
                                             </div>
+                                            <div class="blog_thumb" v-else>
+                                                <a href="blog-details.html"><img src="https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png" alt="asif"></a>
+                                            </div>
+
                                             <figcaption class="blog_content">
-                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <h4 class="post_title"><a href="blog-details.html"> {{ post.title }} </a></h4>
+                                                <p> {{ post.description | sortlength(80,'...') }} </p>
                                                 <div class="articles_date">
-                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                    <p>{{ post.created_at | timeformat }} | <a href="#">eCommerce</a> </p>
                                                 </div>
                                             </figcaption>
                                         </figure>

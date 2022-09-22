@@ -90,6 +90,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogPage',
@@ -382,7 +387,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", {}, [
-    _vm._m(0),
+    _c("div", { staticClass: "breadcrumbs_area" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "breadcrumb_content" }, [
+              _c("h3", [_vm._v("Blog")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: { name: "public-home" } } },
+                      [_vm._v("home")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", [_vm._v("blog")])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "blog_page_section mt-70" }, [
       _c("div", { staticClass: "container" }, [
@@ -396,7 +427,64 @@ var render = function() {
                   return _c(
                     "div",
                     { key: post, staticClass: "col-lg-4 col-md-4 col-sm-6" },
-                    [_vm._m(1, true)]
+                    [
+                      _c("article", { staticClass: "single_blog" }, [
+                        _c("figure", [
+                          post.photo
+                            ? _c("div", { staticClass: "blog_thumb" }, [
+                                _c(
+                                  "a",
+                                  { attrs: { href: "blog-details.html" } },
+                                  [
+                                    _c("img", {
+                                      attrs: { src: post.photo, alt: "" }
+                                    })
+                                  ]
+                                )
+                              ])
+                            : _c("div", { staticClass: "blog_thumb" }, [
+                                _vm._m(0, true)
+                              ]),
+                          _vm._v(" "),
+                          _c("figcaption", { staticClass: "blog_content" }, [
+                            _c("h4", { staticClass: "post_title" }, [
+                              _c(
+                                "a",
+                                { attrs: { href: "blog-details.html" } },
+                                [_vm._v(" " + _vm._s(post.title) + " ")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                " " +
+                                  _vm._s(
+                                    _vm._f("sortlength")(
+                                      post.description,
+                                      80,
+                                      "..."
+                                    )
+                                  ) +
+                                  " "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "articles_date" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm._f("timeformat")(post.created_at)
+                                  ) + " | "
+                                ),
+                                _c("a", { attrs: { href: "#" } }, [
+                                  _vm._v("eCommerce")
+                                ])
+                              ])
+                            ])
+                          ])
+                        ])
+                      ])
+                    ]
                   )
                 }),
                 0
@@ -414,7 +502,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(2)
+    _vm._m(1)
   ])
 }
 var staticRenderFns = [
@@ -422,61 +510,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "breadcrumbs_area" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "breadcrumb_content" }, [
-              _c("h3", [_vm._v("Blog")]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [
-                  _c("a", { attrs: { href: "index.html" } }, [_vm._v("home")])
-                ]),
-                _vm._v(" "),
-                _c("li", [_vm._v("blog")])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "single_blog" }, [
-      _c("figure", [
-        _c("div", { staticClass: "blog_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("figcaption", { staticClass: "blog_content" }, [
-          _c("h4", { staticClass: "post_title" }, [
-            _c("a", { attrs: { href: "blog-details.html" } }, [
-              _vm._v(
-                "Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex."
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "articles_date" }, [
-            _c("p", [
-              _vm._v("23/06/2021 | "),
-              _c("a", { attrs: { href: "#" } }, [_vm._v("eCommerce")])
-            ])
-          ])
-        ])
-      ])
+    return _c("a", { attrs: { href: "blog-details.html" } }, [
+      _c("img", {
+        attrs: {
+          src:
+            "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png",
+          alt: "asif"
+        }
+      })
     ])
   },
   function() {
