@@ -35,10 +35,10 @@
                                             </div>
 
                                             <figcaption class="blog_content">
-                                                <h4 class="post_title"><a href="blog-details.html"> {{ post.title }} </a></h4>
+                                                <h4 class="post_title"><a href="blog-details.html"> {{ post.title | sortlength(30,'...') }} </a></h4>
                                                 <p> {{ post.description | sortlength(80,'...') }} </p>
                                                 <div class="articles_date">
-                                                    <p>{{ post.created_at | timeformat }} | <a href="#">eCommerce</a> </p>
+                                                    <p> <span v-if="post.user">{{ post.user.name }}</span> | {{ post.created_at | timeformat }} | <a href="#">  <span v-if="post.category">{{  post.category.cat_name }}</span>  </a> </p>
                                                 </div>
                                             </figcaption>
                                         </figure>

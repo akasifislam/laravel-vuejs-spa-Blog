@@ -451,7 +451,19 @@ var render = function() {
                               _c(
                                 "a",
                                 { attrs: { href: "blog-details.html" } },
-                                [_vm._v(" " + _vm._s(post.title) + " ")]
+                                [
+                                  _vm._v(
+                                    " " +
+                                      _vm._s(
+                                        _vm._f("sortlength")(
+                                          post.title,
+                                          30,
+                                          "..."
+                                        )
+                                      ) +
+                                      " "
+                                  )
+                                ]
                               )
                             ]),
                             _vm._v(" "),
@@ -471,13 +483,22 @@ var render = function() {
                             _vm._v(" "),
                             _c("div", { staticClass: "articles_date" }, [
                               _c("p", [
+                                post.user
+                                  ? _c("span", [_vm._v(_vm._s(post.user.name))])
+                                  : _vm._e(),
                                 _vm._v(
-                                  _vm._s(
-                                    _vm._f("timeformat")(post.created_at)
-                                  ) + " | "
+                                  " | " +
+                                    _vm._s(
+                                      _vm._f("timeformat")(post.created_at)
+                                    ) +
+                                    " | "
                                 ),
                                 _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("eCommerce")
+                                  post.category
+                                    ? _c("span", [
+                                        _vm._v(_vm._s(post.category.cat_name))
+                                      ])
+                                    : _vm._e()
                                 ])
                               ])
                             ])
