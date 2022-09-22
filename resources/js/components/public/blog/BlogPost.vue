@@ -24,7 +24,7 @@
                     <div class="col-lg-9 col-md-12">
                         <div class="blog_wrapper">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
@@ -39,7 +39,7 @@
                                         </figure>
                                     </article>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
@@ -54,7 +54,142 @@
                                         </figure>
                                     </article>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <article class="single_blog">
+                                        <figure>
+                                            <div class="blog_thumb">
+                                                <a href="blog-details.html"><img src="https://media.istockphoto.com/photos/creativity-checked-picture-id855341578?k=20&m=855341578&s=612x612&w=0&h=M6NSGhMlT-q5agtumeFpMUyFRdTMpnXHYFrIFQ-uK94=" alt=""></a>
+                                            </div>
+                                            <figcaption class="blog_content">
+                                                <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
+                                                <div class="articles_date">
+                                                    <p>23/06/2021 | <a href="#">eCommerce</a> </p>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
@@ -73,7 +208,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-3 col-md-12">
+                    
+                    <div class="col-lg-3 col-md-12">
                         <div class="blog_sidebar_widget">
                             <div class="widget_list widget_search">
                                 <div class="widget_title">
@@ -90,7 +226,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/comment2.png.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <span> <a href="#">demo</a> says:</span>
@@ -99,7 +235,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/comment2.png.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <span><a href="#">admin</a> says:</span>
@@ -108,7 +244,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/comment2.png.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <span><a href="#">demo</a> says:</span>
@@ -122,7 +258,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blogs1.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <h4><a href="blog-details.html">Blog image post</a></h4>
@@ -131,7 +267,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blogs2.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <h4><a href="blog-details.html">Post with Gallery</a></h4>
@@ -140,7 +276,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blogs3.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <h4><a href="blog-details.html">Post with Audio</a></h4>
@@ -174,7 +310,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                 </div>
             </div>

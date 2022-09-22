@@ -29,7 +29,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog1.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
@@ -44,7 +44,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog2.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog2.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html"> dolor sit amet, elit. Illo iste sed animi quaerat  nobis odit  nulla.</a></h4>
@@ -59,7 +59,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog3.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">maxime laborum voluptas minus, est, unde eaque esse tenetur.</a></h4>
@@ -74,7 +74,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog2.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog2.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
@@ -89,7 +89,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog1.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">dolor sit amet, elit. Illo iste sed animi quaerat  nobis odit  nulla.</a></h4>
@@ -104,7 +104,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog3.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">maxime laborum voluptas minus, est, unde eaque esse tenetur.</a></h4>
@@ -119,7 +119,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog2.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog2.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">Lorem ipsum dolor sit amet,  elit. Impedit, aliquam animi, saepe ex.</a></h4>
@@ -134,7 +134,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog1.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog1.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">dolor sit amet, elit. Illo iste sed animi quaerat  nobis odit  nulla.</a></h4>
@@ -149,7 +149,7 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb">
-                                                <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blog3.jpg" alt=""></a>
+                                                <a href="blog-details.html"><img src="/public/assets/img/blog/blog3.jpg" alt=""></a>
                                             </div>
                                             <figcaption class="blog_content">
                                                 <h4 class="post_title"><a href="blog-details.html">maxime laborum voluptas minus, est, unde eaque esse tenetur.</a></h4>
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/comment2.png.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="/public/assets/img/blog/comment2.png.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <span> <a href="#">demo</a> says:</span>
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/comment2.png.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="/public/assets/img/blog/comment2.png.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <span><a href="#">admin</a> says:</span>
@@ -198,7 +198,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/comment2.png.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="/public/assets/img/blog/comment2.png.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <span><a href="#">demo</a> says:</span>
@@ -212,7 +212,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blogs1.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="/public/assets/img/blog/blogs1.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <h4><a href="blog-details.html">Blog image post</a></h4>
@@ -221,7 +221,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blogs2.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="/public/assets/img/blog/blogs2.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <h4><a href="blog-details.html">Post with Gallery</a></h4>
@@ -230,7 +230,7 @@
                                 </div>
                                 <div class="post_wrapper">
                                     <div class="post_thumb">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/public') }}/assets/img/blog/blogs3.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="/public/assets/img/blog/blogs3.jpg" alt=""></a>
                                     </div>
                                     <div class="post_info">
                                         <h4><a href="blog-details.html">Post with Audio</a></h4>
