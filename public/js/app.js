@@ -2207,6 +2207,12 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_public_blog_BlogSingle_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/blog/BlogSingle.vue */ "./resources/js/components/public/blog/BlogSingle.vue"));
   }
+}, {
+  path: '/categories-post/:id',
+  name: 'categories-post',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_public_blog_BlogPost_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/blog/BlogPost.vue */ "./resources/js/components/public/blog/BlogPost.vue"));
+  }
 }];
 
 /***/ }),
@@ -2281,6 +2287,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     siglePost: function siglePost(state, payload) {
       return state.singlepost = payload;
+    },
+    SET_CATEGORY_BlOG: function SET_CATEGORY_BlOG(state, payload) {
+      return state.blogposts = payload;
     }
   },
   actions: {
@@ -2329,6 +2338,12 @@ __webpack_require__.r(__webpack_exports__);
     getPostById: function getPostById(context, payload) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/single-post/' + payload).then(function (response) {
         context.commit('siglePost', response.data.post);
+      });
+    },
+    loadBlogPostsById: function loadBlogPostsById(context, payload) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories-post/' + payload).then(function (response) {
+        console.log(response.data.posts);
+        context.commit('SET_CATEGORY_BlOG', response.data.posts);
       });
     }
   }

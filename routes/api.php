@@ -36,6 +36,7 @@ Route::post('/excel-all', [ExportController::class, 'downloadExcel']);
 
 Route::get('/blog-posts', [FrontendController::class, 'blogPosts']);
 Route::get('/single-post/{id}', [FrontendController::class, 'blogSinglePost']);
+Route::get('/categories-post/{id}', [FrontendController::class, 'blogCategoryPost']);
 
 
 

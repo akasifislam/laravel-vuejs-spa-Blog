@@ -120,6 +120,16 @@ __webpack_require__.r(__webpack_exports__);
     this.$Progress.start();
     this.$store.dispatch("loadBlogPosts");
     this.$Progress.finish();
+  },
+  methods: {
+    getAllCategoryPost: function getAllCategoryPost() {
+      this.$store.dispatch("loadBlogPostsById", this.$route.params.id);
+    }
+  },
+  watch: {
+    $route: function $route(to, from) {
+      this.getAllCategoryPost();
+    }
   }
 });
 
@@ -370,7 +380,7 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "breadcrumb_content" }, [
-              _c("h3", [_vm._v("Blog")]),
+              _c("h3", [_vm._v("Blog " + _vm._s(this.$route.params.id) + " ")]),
               _vm._v(" "),
               _c("ul", [
                 _c(
@@ -401,10 +411,10 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "row" },
-                _vm._l(_vm.blogposts, function(post) {
+                _vm._l(_vm.blogposts, function(post, idx) {
                   return _c(
                     "div",
-                    { key: post, staticClass: "col-lg-4 col-md-4 col-sm-6" },
+                    { key: idx, staticClass: "col-lg-4 col-md-4 col-sm-6" },
                     [
                       _c("article", { staticClass: "single_blog" }, [
                         _c("figure", [
@@ -599,12 +609,19 @@ var render = function() {
         _vm._v(" "),
         _c(
           "ul",
-          _vm._l(_vm.categories, function(category) {
-            return _c("li", { key: category }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v(" " + _vm._s(category.cat_name) + " ")
-              ])
-            ])
+          _vm._l(_vm.categories, function(category, idx) {
+            return _c(
+              "li",
+              { key: idx },
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: "/categories-post/" + category.id } },
+                  [_vm._v(" " + _vm._s(category.cat_name) + " ")]
+                )
+              ],
+              1
+            )
           }),
           0
         )
@@ -616,8 +633,8 @@ var render = function() {
         [
           _vm._m(2),
           _vm._v(" "),
-          _vm._l(_vm.blogposts.slice(0, 5), function(post) {
-            return _c("div", { key: post, staticClass: "post_wrapper" }, [
+          _vm._l(_vm.blogposts.slice(0, 5), function(post, idx) {
+            return _c("div", { key: idx, staticClass: "post_wrapper" }, [
               post.photo
                 ? _c(
                     "div",

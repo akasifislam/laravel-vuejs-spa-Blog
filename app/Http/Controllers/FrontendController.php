@@ -23,4 +23,13 @@ class FrontendController extends Controller
             'post' => $blog
         ]);
     }
+
+    public function blogCategoryPost($id)
+    {
+        // return "ok";
+        $blog = Blog::with('user', 'category')->where('cat_id', $id)->get();
+        return response()->json([
+            'posts' => $blog
+        ]);
+    }
 }

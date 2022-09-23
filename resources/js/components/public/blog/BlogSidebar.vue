@@ -16,14 +16,14 @@
                       <h3>Categories</h3>
                   </div>
                   <ul>
-                      <li v-for="category in categories" :key="category"><a href="#"> {{ category.cat_name }} </a></li>
+                      <li v-for="(category,idx) in categories" :key="idx"><router-link :to="`/categories-post/${category.id}`"> {{ category.cat_name }} </router-link></li>
                   </ul>
               </div>
               <div class="widget_list widget_post">
                   <div class="widget_title">
                       <h3>Recent Posts</h3>
                   </div>
-                  <div v-for="post in blogposts.slice(0, 5)" :key="post" class="post_wrapper">
+                  <div v-for="(post,idx) in blogposts.slice(0, 5)" :key="idx" class="post_wrapper">
                       <div v-if="post.photo" class="post_thumb">
                           <router-link :to="`single-post/${post.id}`">
                             <img :src="post.photo" alt="">

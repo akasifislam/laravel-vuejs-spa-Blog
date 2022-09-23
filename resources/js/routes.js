@@ -106,6 +106,11 @@ export const routes = [
         name: 'single-post',
         component: ()=> import('./components/public/blog/BlogSingle.vue'),
     },
+    {
+        path:'/categories-post/:id',
+        name: 'categories-post',
+        component: ()=> import('./components/public/blog/BlogPost.vue'),
+    },
 
 
 

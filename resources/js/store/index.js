@@ -62,6 +62,9 @@ export default {
         siglePost(state,payload){
             return state.singlepost = payload
         },
+        SET_CATEGORY_BlOG(state,payload){
+            return state.blogposts = payload
+        }
 
     },
     actions:{
@@ -90,6 +93,7 @@ export default {
                 commit('SET_BlOG_POSTS',response.data);
             })
         },
+        
         // loadBlogSinglePost({commit}){
         //     axios.get('/api/single-post/'+this.$route.params.id).then((response) => {
         //         commit('SET_BlOG_SINGLE_POST',response);
@@ -109,5 +113,12 @@ export default {
                     context.commit('siglePost',response.data.post)
                 })
         },
+        loadBlogPostsById(context,payload){
+            axios.get('/api/categories-post/'+payload)
+                .then((response)=>{
+                    console.log(response.data.posts);
+                    context.commit('SET_CATEGORY_BlOG',response.data.posts)
+                })
+        }
     },
 }

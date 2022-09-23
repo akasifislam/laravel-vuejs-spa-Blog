@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb_content">
-                            <h3>Blog</h3>
+                            <h3>Blog {{ this.$route.params.id }} </h3>
                             <ul>
                                 <li><router-link :to="{ name:'public-home' }">home</router-link></li>
                                 <li>blog</li>
@@ -24,7 +24,7 @@
                     <div class="col-lg-9 col-md-12">
                         <div class="blog_wrapper">
                             <div class="row">
-                                <div v-for="post in blogposts" :key="post" class="col-lg-4 col-md-4 col-sm-6">
+                                <div v-for="(post,idx) in blogposts" :key="idx" class="col-lg-4 col-md-4 col-sm-6">
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb" v-if="post.photo">
@@ -107,6 +107,16 @@ export default {
         this.$Progress.start();
         this.$store.dispatch("loadBlogPosts")
         this.$Progress.finish();
+    },
+    methods:{
+        getAllCategoryPost() {
+            this.$store.dispatch("loadBlogPostsById",this.$route.params.id)
+        }
+    },
+    watch:{
+        $route(to,from) {
+            this.getAllCategoryPost();
+        }
     }
     
 }
