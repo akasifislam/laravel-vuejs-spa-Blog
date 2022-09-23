@@ -198,59 +198,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogSidebar',
   computed: {
     categories: function categories() {
       return this.$store.getters.getCategories;
+    },
+    blogposts: function blogposts() {
+      return this.$store.getters.getBlogPosts;
     }
   },
   created: function created() {
     // this.$Progress.start();
-    this.$store.dispatch("loadCategories"); // this.$Progress.finish();
+    this.$store.dispatch("loadCategories");
+    this.$store.dispatch("loadBlogPosts"); // this.$Progress.finish();
   }
 });
 
@@ -655,11 +616,72 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(2),
+      _c(
+        "div",
+        { staticClass: "widget_list widget_post" },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._l(_vm.blogposts.slice(0, 5), function(post) {
+            return _c("div", { key: post, staticClass: "post_wrapper" }, [
+              post.photo
+                ? _c(
+                    "div",
+                    { staticClass: "post_thumb" },
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: "single-post/" + post.id } },
+                        [_c("img", { attrs: { src: post.photo, alt: "" } })]
+                      )
+                    ],
+                    1
+                  )
+                : _c(
+                    "div",
+                    { staticClass: "post_thumb" },
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: "single-post/" + post.id } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+              _vm._v(" "),
+              _c("div", { staticClass: "post_info" }, [
+                _c(
+                  "h4",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: "single-post/" + post.id } },
+                      [_vm._v(_vm._s(post.title))]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("span", [
+                  _vm._v(_vm._s(_vm._f("timeformat")(post.created_at)) + " ")
+                ])
+              ])
+            ])
+          })
+        ],
+        2
+      ),
       _vm._v(" "),
-      _vm._m(3),
-      _vm._v(" "),
-      _vm._m(4)
+      _vm._m(3)
     ])
   ])
 }
@@ -692,167 +714,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "widget_list comments" }, [
-      _c("div", { staticClass: "widget_title" }, [
-        _c("h3", [_vm._v("Recent Comments")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "post_wrapper" }, [
-        _c("div", { staticClass: "post_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "post_info" }, [
-          _c("span", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("demo")]),
-            _vm._v(" says:")
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _vm._v("Quisque semper nunc")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "post_wrapper" }, [
-        _c("div", { staticClass: "post_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "post_info" }, [
-          _c("span", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("admin")]),
-            _vm._v(" says:")
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _vm._v("Quisque orci porta...")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "post_wrapper" }, [
-        _c("div", { staticClass: "post_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "post_info" }, [
-          _c("span", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("demo")]),
-            _vm._v(" says:")
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _vm._v("Quisque semper nunc")
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "widget_list widget_post" }, [
-      _c("div", { staticClass: "widget_title" }, [
-        _c("h3", [_vm._v("Recent Posts")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "post_wrapper" }, [
-        _c("div", { staticClass: "post_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "post_info" }, [
-          _c("h4", [
-            _c("a", { attrs: { href: "blog-details.html" } }, [
-              _vm._v("Blog image post")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("span", [_vm._v("March 16, 2018 ")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "post_wrapper" }, [
-        _c("div", { staticClass: "post_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "post_info" }, [
-          _c("h4", [
-            _c("a", { attrs: { href: "blog-details.html" } }, [
-              _vm._v("Post with Gallery")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("span", [_vm._v("March 16, 2018 ")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "post_wrapper" }, [
-        _c("div", { staticClass: "post_thumb" }, [
-          _c("a", { attrs: { href: "blog-details.html" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg",
-                alt: ""
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "post_info" }, [
-          _c("h4", [
-            _c("a", { attrs: { href: "blog-details.html" } }, [
-              _vm._v("Post with Audio")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("span", [_vm._v("March 16, 2018 ")])
-        ])
-      ])
+    return _c("div", { staticClass: "widget_title" }, [
+      _c("h3", [_vm._v("Recent Posts")])
     ])
   },
   function() {

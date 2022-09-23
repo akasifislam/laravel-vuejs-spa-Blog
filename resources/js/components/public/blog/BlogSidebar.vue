@@ -24,67 +24,24 @@
                       <li><a href="#">Travel</a></li> -->
                   </ul>
               </div>
-              <div class="widget_list comments">
-              <div class="widget_title">
-                      <h3>Recent Comments</h3>
-                  </div>
-                  <div class="post_wrapper">
-                      <div class="post_thumb">
-                          <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
-                      </div>
-                      <div class="post_info">
-                          <span> <a href="#">demo</a> says:</span>
-                          <a href="blog-details.html">Quisque semper nunc</a>
-                      </div>
-                  </div>
-                  <div class="post_wrapper">
-                      <div class="post_thumb">
-                          <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
-                      </div>
-                      <div class="post_info">
-                          <span><a href="#">admin</a> says:</span>
-                          <a href="blog-details.html">Quisque orci porta...</a>
-                      </div>
-                  </div>
-                  <div class="post_wrapper">
-                      <div class="post_thumb">
-                          <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
-                      </div>
-                      <div class="post_info">
-                          <span><a href="#">demo</a> says:</span>
-                          <a href="blog-details.html">Quisque semper nunc</a>
-                      </div>
-                  </div>
-              </div>
               <div class="widget_list widget_post">
                   <div class="widget_title">
                       <h3>Recent Posts</h3>
                   </div>
-                  <div class="post_wrapper">
-                      <div class="post_thumb">
-                          <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
+                  <div v-for="post in blogposts.slice(0, 5)" :key="post" class="post_wrapper">
+                      <div v-if="post.photo" class="post_thumb">
+                          <router-link :to="`single-post/${post.id}`">
+                            <img :src="post.photo" alt="">
+                          </router-link>
+                      </div>
+                      <div v-else class="post_thumb">
+                          <router-link :to="`single-post/${post.id}`">
+                            <img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt="">
+                          </router-link>
                       </div>
                       <div class="post_info">
-                          <h4><a href="blog-details.html">Blog image post</a></h4>
-                          <span>March 16, 2018 </span>
-                      </div>
-                  </div>
-                  <div class="post_wrapper">
-                      <div class="post_thumb">
-                          <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
-                      </div>
-                      <div class="post_info">
-                          <h4><a href="blog-details.html">Post with Gallery</a></h4>
-                          <span>March 16, 2018 </span>
-                      </div>
-                  </div>
-                  <div class="post_wrapper">
-                      <div class="post_thumb">
-                          <a href="blog-details.html"><img src="https://cdn.pixabay.com/photo/2021/01/29/14/41/wardrobe-5961193__340.jpg" alt=""></a>
-                      </div>
-                      <div class="post_info">
-                          <h4><a href="blog-details.html">Post with Audio</a></h4>
-                          <span>March 16, 2018 </span>
+                          <h4><router-link :to="`single-post/${post.id}`">{{ post.title }}</router-link></h4>
+                          <span>{{ post.created_at | timeformat }} </span>
                       </div>
                   </div>
               </div>
@@ -110,11 +67,15 @@ export default {
     computed:{
        categories(){
            return this.$store.getters.getCategories
-       }
+       },
+       blogposts(){
+        return this.$store.getters.getBlogPosts
+        }
     },
     created(){
         // this.$Progress.start();
         this.$store.dispatch("loadCategories")
+        this.$store.dispatch("loadBlogPosts")
         // this.$Progress.finish();
     },
 }

@@ -99,9 +99,9 @@ export default {
         BlogSidebar
     },
     computed:{
-    blogposts(){
-           return this.$store.getters.getBlogPosts
-       }
+        blogposts(){
+        return this.$store.getters.getBlogPosts
+        }
     },
     created(){
         this.$Progress.start();
