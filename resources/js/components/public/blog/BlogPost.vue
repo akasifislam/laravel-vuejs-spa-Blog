@@ -28,10 +28,17 @@
                                     <article class="single_blog">
                                         <figure>
                                             <div class="blog_thumb" v-if="post.photo">
-                                                <a href="blog-details.html"><img :src="post.photo" alt=""></a>
+                                                <router-link :to="`single-post/${post.id}`" class="">
+                                                    <img :src="post.photo" alt="">
+                                                </router-link>
+                                                <!-- <a href="blog-details.html"></a> -->
                                             </div>
                                             <div class="blog_thumb" v-else>
-                                                <a href="blog-details.html"><img src="https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png" alt="asif"></a>
+
+
+                                                <router-link :to="`single-post/${post.id}`" class="">
+                                                    <img src="https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png" alt="asif">
+                                                </router-link>
                                             </div>
 
                                             <figcaption class="blog_content">

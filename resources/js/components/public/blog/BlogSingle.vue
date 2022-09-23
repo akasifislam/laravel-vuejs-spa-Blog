@@ -21,7 +21,7 @@
     <!--blog body area start-->
     <div class="blog_details">
         <div class="container">
-            <span> {{ singlepost  }}</span>
+            <!-- <span> {{ singlepost  }}</span>     -->
             <div class="row">
                 <div class="col-lg-9 col-md-12">
                     <!--blog grid area start-->
@@ -31,7 +31,7 @@
                                <div class="post_header">
                                    <h3 class="post_title"> {{ singlepost.title }} {{ this.$route.params.id }} </h3>
                                     <div class="blog_meta">   
-                                       <p>Posted by : <a href="#">admin</a> / On : <a href="#">April 10, 2019</a> / In : <a href="#">Company, Image, Travel</a></p>                                     
+                                       <p>Posted by : <a href="#">{{ singlepost.user.name }}</a> / On : <a href="#"> A{{ singlepost.created_at | timeformat }} </a> / In : <a href="#">Company, Image, Travel</a></p>                                     
                                     </div>
                                 </div>
                                 <div class="blog_thumb" v-if="singlepost.photo">

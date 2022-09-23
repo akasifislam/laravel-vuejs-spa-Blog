@@ -761,8 +761,6 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "blog_details" }, [
       _c("div", { staticClass: "container" }, [
-        _c("span", [_vm._v(" " + _vm._s(_vm.singlepost))]),
-        _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-9 col-md-12" }, [
             _c("div", { staticClass: "blog_wrapper blog_wrapper_details" }, [
@@ -779,7 +777,28 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(1)
+                    _c("div", { staticClass: "blog_meta" }, [
+                      _c("p", [
+                        _vm._v("Posted by : "),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(_vm._s(_vm.singlepost.user.name))
+                        ]),
+                        _vm._v(" / On : "),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(
+                            " A" +
+                              _vm._s(
+                                _vm._f("timeformat")(_vm.singlepost.created_at)
+                              ) +
+                              " "
+                          )
+                        ]),
+                        _vm._v(" / In : "),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v("Company, Image, Travel")
+                        ])
+                      ])
+                    ])
                   ]),
                   _vm._v(" "),
                   _vm.singlepost.photo
@@ -790,7 +809,7 @@ var render = function() {
                           })
                         ])
                       ])
-                    : _c("div", { staticClass: "blog_thumb" }, [_vm._m(2)]),
+                    : _c("div", { staticClass: "blog_thumb" }, [_vm._m(1)]),
                   _vm._v(" "),
                   _c("figcaption", { staticClass: "blog_content" }, [
                     _c("div", { staticClass: "post_content" }, [
@@ -798,19 +817,19 @@ var render = function() {
                         _vm._v("  " + _vm._s(_vm.singlepost.description) + " ")
                       ]),
                       _vm._v(" "),
-                      _vm._m(3)
+                      _vm._m(2)
                     ]),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _vm._m(3)
                   ])
                 ])
               ]),
               _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
               _vm._m(5),
               _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7)
+              _vm._m(6)
             ])
           ]),
           _vm._v(" "),
@@ -847,21 +866,6 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "blog_meta" }, [
-      _c("p", [
-        _vm._v("Posted by : "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("admin")]),
-        _vm._v(" / On : "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("April 10, 2019")]),
-        _vm._v(" / In : "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Company, Image, Travel")])
       ])
     ])
   },

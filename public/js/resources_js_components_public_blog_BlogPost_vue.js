@@ -98,6 +98,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogPage',
@@ -434,20 +441,42 @@ var render = function() {
                       _c("article", { staticClass: "single_blog" }, [
                         _c("figure", [
                           post.photo
-                            ? _c("div", { staticClass: "blog_thumb" }, [
-                                _c(
-                                  "a",
-                                  { attrs: { href: "blog-details.html" } },
-                                  [
-                                    _c("img", {
-                                      attrs: { src: post.photo, alt: "" }
-                                    })
-                                  ]
-                                )
-                              ])
-                            : _c("div", { staticClass: "blog_thumb" }, [
-                                _vm._m(0, true)
-                              ]),
+                            ? _c(
+                                "div",
+                                { staticClass: "blog_thumb" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    { attrs: { to: "single-post/" + post.id } },
+                                    [
+                                      _c("img", {
+                                        attrs: { src: post.photo, alt: "" }
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            : _c(
+                                "div",
+                                { staticClass: "blog_thumb" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    { attrs: { to: "single-post/" + post.id } },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png",
+                                          alt: "asif"
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
                           _vm._v(" "),
                           _c("figcaption", { staticClass: "blog_content" }, [
                             _c("h4", { staticClass: "post_title" }, [
@@ -539,24 +568,10 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(0)
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "blog-details.html" } }, [
-      _c("img", {
-        attrs: {
-          src:
-            "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png",
-          alt: "asif"
-        }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
