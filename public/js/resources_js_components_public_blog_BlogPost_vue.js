@@ -193,11 +193,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogSidebar',
   computed: {
@@ -209,9 +204,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    // this.$Progress.start();
     this.$store.dispatch("loadCategories");
-    this.$store.dispatch("loadBlogPosts"); // this.$Progress.finish();
+    this.$store.dispatch("loadBlogPosts");
   }
 });
 

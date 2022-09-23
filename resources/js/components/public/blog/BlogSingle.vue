@@ -213,7 +213,7 @@
 </template>
 
 <script>
-import BlogSidebar from './BlogSidebar.vue'
+import BlogSidebar from './BlogSidebarSub.vue'
 export default {
     name: "BlogSingle",
     components:{
@@ -224,8 +224,19 @@ export default {
             return this.$store.getters.singlepost
         }
     },
+    methods:{
+            singlePost(){
+                this.$store.dispatch('getPostById',this.$route.params.id);
+            }
+        },
     mounted(){
-        this.$store.dispatch('getPostById',this.$route.params.id);
+        // this.$store.dispatch('getPostById',this.$route.params.id);
+        this.singlePost();
+    },
+    watch:{
+        $route(to,from){
+            this.singlePost();
+        }
     }
 }
 </script>

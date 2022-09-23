@@ -35,7 +35,7 @@
                           </router-link>
                       </div>
                       <div class="post_info">
-                          <h4><router-link :to="`single-post/${post.id}`">{{ post.title }}</router-link></h4>
+                          <h4><router-link :to="`${post.id}`">{{ post.title }}</router-link></h4>
                           <span>{{ post.created_at | timeformat }} </span>
                       </div>
                   </div>
