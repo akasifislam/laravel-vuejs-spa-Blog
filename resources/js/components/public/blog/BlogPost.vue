@@ -104,9 +104,9 @@ export default {
        }
     },
     created(){
-        // this.$Progress.start();
+        this.$Progress.start();
         this.$store.dispatch("loadBlogPosts")
-        // this.$Progress.finish();
+        this.$Progress.finish();
     }
     
 }
