@@ -343,6 +343,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "BlogSingle",
@@ -759,6 +761,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "blog_details" }, [
       _c("div", { staticClass: "container" }, [
+        _c("span", [_vm._v(" " + _vm._s(_vm.singlepost))]),
+        _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-9 col-md-12" }, [
             _c("div", { staticClass: "blog_wrapper blog_wrapper_details" }, [
@@ -767,7 +771,9 @@ var render = function() {
                   _c("div", { staticClass: "post_header" }, [
                     _c("h3", { staticClass: "post_title" }, [
                       _vm._v(
-                        "Aypi non habent claritatem insitam " +
+                        " " +
+                          _vm._s(_vm.singlepost.title) +
+                          " " +
                           _vm._s(this.$route.params.id) +
                           " "
                       )
@@ -776,17 +782,35 @@ var render = function() {
                     _vm._m(1)
                   ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _vm.singlepost.photo
+                    ? _c("div", { staticClass: "blog_thumb" }, [
+                        _c("a", { attrs: { href: "#" } }, [
+                          _c("img", {
+                            attrs: { src: _vm.singlepost.photo, alt: "" }
+                          })
+                        ])
+                      ])
+                    : _c("div", { staticClass: "blog_thumb" }, [_vm._m(2)]),
                   _vm._v(" "),
-                  _vm._m(3)
+                  _c("figcaption", { staticClass: "blog_content" }, [
+                    _c("div", { staticClass: "post_content" }, [
+                      _c("p", [
+                        _vm._v("  " + _vm._s(_vm.singlepost.description) + " ")
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(3)
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4)
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
               _vm._m(5),
               _vm._v(" "),
-              _vm._m(6)
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7)
             ])
           ]),
           _vm._v(" "),
@@ -797,15 +821,7 @@ var render = function() {
             1
           )
         ])
-      ]),
-      _vm._v(" "),
-      _c("h1", [
-        _vm._v(
-          "aLorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, sequi magnam. Nulla voluptatibus temporibus facilis repellat et nam recusandae delectus, rem sint, magni aperiam maxime hic dolores id obcaecati possimus?"
-        )
-      ]),
-      _vm._v(" "),
-      _c("span", [_vm._v(" " + _vm._s(_vm.singlepost))])
+      ])
     ])
   ])
 }
@@ -853,15 +869,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "blog_thumb" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("img", {
-          attrs: {
-            src:
-              "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png",
-            alt: ""
-          }
-        })
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("img", {
+        attrs: {
+          src:
+            "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png",
+          alt: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("blockquote", [
+      _c("p", [
+        _vm._v(
+          "Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque."
+        )
       ])
     ])
   },
@@ -869,82 +895,48 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("figcaption", { staticClass: "blog_content" }, [
-      _c("div", { staticClass: "post_content" }, [
-        _c("p", [
-          _vm._v(
-            "Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu."
-          )
-        ]),
+    return _c("div", { staticClass: "entry_content" }, [
+      _c("div", { staticClass: "post_meta" }, [
+        _c("span", [_vm._v("Tags: ")]),
         _vm._v(" "),
-        _c("blockquote", [
-          _c("p", [
-            _vm._v(
-              "Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque."
-            )
-          ])
-        ]),
+        _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v(", fashion")])]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu."
-          )
-        ]),
+        _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v(", t-shirt")])]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie."
-          )
-        ])
+        _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v(", white")])])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "entry_content" }, [
-        _c("div", { staticClass: "post_meta" }, [
-          _c("span", [_vm._v("Tags: ")]),
-          _vm._v(" "),
-          _c("span", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v(", fashion")])
-          ]),
-          _vm._v(" "),
-          _c("span", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v(", t-shirt")])
-          ]),
-          _vm._v(" "),
-          _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v(", white")])])
-        ]),
+      _c("div", { staticClass: "social_sharing" }, [
+        _c("p", [_vm._v("share this post:")]),
         _vm._v(" "),
-        _c("div", { staticClass: "social_sharing" }, [
-          _c("p", [_vm._v("share this post:")]),
+        _c("ul", [
+          _c("li", [
+            _c("a", { attrs: { href: "#", title: "facebook" } }, [
+              _c("i", { staticClass: "fa fa-facebook" })
+            ])
+          ]),
           _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "#", title: "facebook" } }, [
-                _c("i", { staticClass: "fa fa-facebook" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#", title: "twitter" } }, [
-                _c("i", { staticClass: "fa fa-twitter" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#", title: "pinterest" } }, [
-                _c("i", { staticClass: "fa fa-pinterest" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#", title: "google+" } }, [
-                _c("i", { staticClass: "fa fa-google-plus" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#", title: "linkedin" } }, [
-                _c("i", { staticClass: "fa fa-linkedin" })
-              ])
+          _c("li", [
+            _c("a", { attrs: { href: "#", title: "twitter" } }, [
+              _c("i", { staticClass: "fa fa-twitter" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "#", title: "pinterest" } }, [
+              _c("i", { staticClass: "fa fa-pinterest" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "#", title: "google+" } }, [
+              _c("i", { staticClass: "fa fa-google-plus" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "#", title: "linkedin" } }, [
+              _c("i", { staticClass: "fa fa-linkedin" })
             ])
           ])
         ])

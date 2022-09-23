@@ -21,6 +21,7 @@
     <!--blog body area start-->
     <div class="blog_details">
         <div class="container">
+            <span> {{ singlepost  }}</span>
             <div class="row">
                 <div class="col-lg-9 col-md-12">
                     <!--blog grid area start-->
@@ -28,22 +29,24 @@
                         <article class="single_blog">
                             <figure>
                                <div class="post_header">
-                                   <h3 class="post_title">Aypi non habent claritatem insitam {{ this.$route.params.id }} </h3>
+                                   <h3 class="post_title"> {{ singlepost.title }} {{ this.$route.params.id }} </h3>
                                     <div class="blog_meta">   
                                        <p>Posted by : <a href="#">admin</a> / On : <a href="#">April 10, 2019</a> / In : <a href="#">Company, Image, Travel</a></p>                                     
                                     </div>
                                 </div>
-                                <div class="blog_thumb">
+                                <div class="blog_thumb" v-if="singlepost.photo">
+                                   <a href="#"><img :src="singlepost.photo" alt=""></a>
+                               </div>
+                                <div class="blog_thumb" v-else>
                                    <a href="#"><img src="https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png" alt=""></a>
                                </div>
                                <figcaption class="blog_content">
                                     <div class="post_content">
-                                        <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
+                                        <p>  {{ singlepost.description }} </p>
                                         <blockquote>
                                             <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.</p>
                                         </blockquote>
-                                        <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
-                                        <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
+                                    
                                     </div>
                                     <div class="entry_content">
                                         <div class="post_meta">
@@ -203,8 +206,7 @@
                 </div>
             </div>
         </div>
-        <h1>aLorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, sequi magnam. Nulla voluptatibus temporibus facilis repellat et nam recusandae delectus, rem sint, magni aperiam maxime hic dolores id obcaecati possimus?</h1>
-        <span> {{ singlepost  }}</span>
+        
     </div>
     <!--blog section area end-->
   </span>
