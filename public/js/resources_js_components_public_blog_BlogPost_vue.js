@@ -95,6 +95,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogPage',
@@ -501,7 +504,20 @@ var render = function() {
                                     : _vm._e()
                                 ])
                               ])
-                            ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {},
+                              [
+                                _c(
+                                  "router-link",
+                                  { attrs: { to: "single-post/" + post.id } },
+                                  [_vm._v("Read more")]
+                                )
+                              ],
+                              1
+                            )
                           ])
                         ])
                       ])

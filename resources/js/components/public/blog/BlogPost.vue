@@ -40,6 +40,9 @@
                                                 <div class="articles_date">
                                                     <p> <span v-if="post.user">{{ post.user.name }}</span> | {{ post.created_at | timeformat }} | <a href="#">  <span v-if="post.category">{{  post.category.cat_name }}</span>  </a> </p>
                                                 </div>
+                                                <div class="">
+                                                    <router-link :to="`single-post/${post.id}`" class="">Read more</router-link>
+                                                </div>
                                             </figcaption>
                                         </figure>
                                     </article>

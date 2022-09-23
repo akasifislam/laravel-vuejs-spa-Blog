@@ -101,6 +101,11 @@ export const routes = [
         name: 'blog-post',
         component: ()=> import('./components/public/blog/BlogPost.vue'),
     },
+    {
+        path:'/single-post/:id',
+        name: 'single-post',
+        component: ()=> import('./components/public/blog/BlogSingle.vue'),
+    },
 
 
 

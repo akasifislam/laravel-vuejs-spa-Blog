@@ -13,4 +13,14 @@ class FrontendController extends Controller
         $blogs = Blog::latest('id')->with('category', 'user')->get();
         return response()->json($blogs, 200);
     }
+
+
+    public function blogSinglePost($id)
+    {
+        // return "ok";
+        $blog = Blog::with('user', 'category')->where('id', $id)->first();
+        return response()->json([
+            'post' => $blog
+        ]);
+    }
 }

@@ -7,6 +7,7 @@ export default {
         tags:[],
         blogs:[],
         blogposts: [],
+        singlepost:[],
     },
     getters:{
         getCategories(state)
@@ -28,7 +29,10 @@ export default {
         getBlogPosts(state)
         {
             return state.blogposts
-        }
+        },
+        singlepost(state){
+            return state.singlepost
+        },
     },
     mutations:{
         // category
@@ -54,7 +58,10 @@ export default {
         },
         SET_BlOG_POSTS(state,data){
             state.blogposts = data
-        }
+        },
+        siglePost(state,payload){
+            return state.singlepost = payload
+        },
 
     },
     actions:{
@@ -82,6 +89,25 @@ export default {
             axios.get('/api/blog-posts').then((response) => {
                 commit('SET_BlOG_POSTS',response.data);
             })
-        }
+        },
+        // loadBlogSinglePost({commit}){
+        //     axios.get('/api/single-post/'+this.$route.params.id).then((response) => {
+        //         commit('SET_BlOG_SINGLE_POST',response);
+        //     })
+        // },
+        // getPostByCatId(context,payload){
+        //     axios.get('/api/single-post/'+payload)
+        //         .then((response)=>{
+        //             console.log(response.data.posts)
+        //             context.commit('getPostByCatId',response.data)
+        //         })
+        // },
+
+        getPostById(context,payload){
+            axios.get('/api/single-post/'+payload)
+                .then((response)=>{
+                    context.commit('siglePost',response.data.post)
+                })
+        },
     },
 }

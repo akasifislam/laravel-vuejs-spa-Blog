@@ -2201,6 +2201,12 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_public_blog_BlogPost_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/blog/BlogPost.vue */ "./resources/js/components/public/blog/BlogPost.vue"));
   }
+}, {
+  path: '/single-post/:id',
+  name: 'single-post',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_public_blog_BlogSingle_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/public/blog/BlogSingle.vue */ "./resources/js/components/public/blog/BlogSingle.vue"));
+  }
 }];
 
 /***/ }),
@@ -2225,7 +2231,8 @@ __webpack_require__.r(__webpack_exports__);
     posts: [],
     tags: [],
     blogs: [],
-    blogposts: []
+    blogposts: [],
+    singlepost: []
   },
   getters: {
     getCategories: function getCategories(state) {
@@ -2242,6 +2249,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getBlogPosts: function getBlogPosts(state) {
       return state.blogposts;
+    },
+    singlepost: function singlepost(state) {
+      return state.singlepost;
     }
   },
   mutations: {
@@ -2268,6 +2278,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     SET_BlOG_POSTS: function SET_BlOG_POSTS(state, data) {
       state.blogposts = data;
+    },
+    siglePost: function siglePost(state, payload) {
+      return state.singlepost = payload;
     }
   },
   actions: {
@@ -2299,6 +2312,23 @@ __webpack_require__.r(__webpack_exports__);
       var commit = _ref5.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/blog-posts').then(function (response) {
         commit('SET_BlOG_POSTS', response.data);
+      });
+    },
+    // loadBlogSinglePost({commit}){
+    //     axios.get('/api/single-post/'+this.$route.params.id).then((response) => {
+    //         commit('SET_BlOG_SINGLE_POST',response);
+    //     })
+    // },
+    // getPostByCatId(context,payload){
+    //     axios.get('/api/single-post/'+payload)
+    //         .then((response)=>{
+    //             console.log(response.data.posts)
+    //             context.commit('getPostByCatId',response.data)
+    //         })
+    // },
+    getPostById: function getPostById(context, payload) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/single-post/' + payload).then(function (response) {
+        context.commit('siglePost', response.data.post);
       });
     }
   }
@@ -79895,7 +79925,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_blog_List_vue":1,"resources_js_components_admin_blog_New_vue":1,"resources_js_components_admin_blog_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1,"resources_js_components_public_PublicHome_vue":1,"resources_js_components_public_blog_TestPost_vue":1,"resources_js_components_public_blog_BlogPost_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_admin_category_List_vue":1,"resources_js_components_admin_category_New_vue":1,"resources_js_components_admin_category_Edit_vue":1,"resources_js_components_admin_post_List_vue":1,"resources_js_components_admin_post_New_vue":1,"resources_js_components_admin_tag_List_vue":1,"resources_js_components_admin_tag_New_vue":1,"resources_js_components_admin_tag_Edit_vue":1,"resources_js_components_admin_blog_List_vue":1,"resources_js_components_admin_blog_New_vue":1,"resources_js_components_admin_blog_Edit_vue":1,"resources_js_components_admin_message_List_vue":1,"resources_js_components_admin_message_New_vue":1,"resources_js_components_public_PublicHome_vue":1,"resources_js_components_public_blog_TestPost_vue":1,"resources_js_components_public_blog_BlogPost_vue":1,"resources_js_components_public_blog_BlogSingle_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
