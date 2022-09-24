@@ -2326,32 +2326,23 @@ __webpack_require__.r(__webpack_exports__);
         commit('SET_BlOG_POSTS', response.data);
       });
     },
-    // loadBlogSinglePost({commit}){
-    //     axios.get('/api/single-post/'+this.$route.params.id).then((response) => {
-    //         commit('SET_BlOG_SINGLE_POST',response);
-    //     })
-    // },
-    // getPostByCatId(context,payload){
-    //     axios.get('/api/single-post/'+payload)
-    //         .then((response)=>{
-    //             console.log(response.data.posts)
-    //             context.commit('getPostByCatId',response.data)
-    //         })
-    // },
-    getPostById: function getPostById(context, payload) {
+    getPostById: function getPostById(_ref6, payload) {
+      var commit = _ref6.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/single-post/' + payload).then(function (response) {
-        context.commit('siglePost', response.data.post);
+        commit('siglePost', response.data.post);
       });
     },
-    loadBlogPostsById: function loadBlogPostsById(context, payload) {
+    loadBlogPostsById: function loadBlogPostsById(_ref7, payload) {
+      var commit = _ref7.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories-post/' + payload).then(function (response) {
         console.log(response.data.posts);
-        context.commit('SET_CATEGORY_BlOG', response.data.posts);
+        commit('SET_CATEGORY_BlOG', response.data.posts);
       });
     },
-    searchPost: function searchPost(context, payload) {
+    loadSearchPost: function loadSearchPost(_ref8, payload) {
+      var commit = _ref8.commit;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/search?s=' + payload).then(function (response) {
-        context.commit('SET_SEARCH_BlOG', response.data.posts);
+        commit('SET_SEARCH_BlOG', response.data.posts);
       });
     }
   }

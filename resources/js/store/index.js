@@ -96,38 +96,23 @@ export default {
                 commit('SET_BlOG_POSTS',response.data);
             })
         },
-        
-        
-        // loadBlogSinglePost({commit}){
-        //     axios.get('/api/single-post/'+this.$route.params.id).then((response) => {
-        //         commit('SET_BlOG_SINGLE_POST',response);
-        //     })
-        // },
-        // getPostByCatId(context,payload){
-        //     axios.get('/api/single-post/'+payload)
-        //         .then((response)=>{
-        //             console.log(response.data.posts)
-        //             context.commit('getPostByCatId',response.data)
-        //         })
-        // },
-
-        getPostById(context,payload){
+        getPostById({commit},payload){
             axios.get('/api/single-post/'+payload)
                 .then((response)=>{
-                    context.commit('siglePost',response.data.post)
+                    commit('siglePost',response.data.post)
                 })
         },
-        loadBlogPostsById(context,payload){
+        loadBlogPostsById({commit},payload){
             axios.get('/api/categories-post/'+payload)
                 .then((response)=>{
                     console.log(response.data.posts);
-                    context.commit('SET_CATEGORY_BlOG',response.data.posts)
+                    commit('SET_CATEGORY_BlOG',response.data.posts)
                 })
         },
-        searchPost(context,payload){
+        loadSearchPost({commit},payload){
             axios.get('/api/search?s='+payload)
                 .then((response)=>{
-                    context.commit('SET_SEARCH_BlOG',response.data.posts) 
+                    commit('SET_SEARCH_BlOG',response.data.posts) 
                 })
         }
     },

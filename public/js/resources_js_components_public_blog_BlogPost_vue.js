@@ -228,7 +228,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     realSearch: function realSearch() {
-      this.$store.dispatch("searchPost", this.keyword);
+      this.$store.dispatch("loadSearchPost", this.keyword);
     }
   }
 });

@@ -78,7 +78,7 @@ export default {
     },
     methods:{
         realSearch() {
-            this.$store.dispatch("searchPost",this.keyword)
+            this.$store.dispatch("loadSearchPost",this.keyword)
         }
     }
 }
