@@ -59,11 +59,14 @@ export default {
         SET_BlOG_POSTS(state,data){
             state.blogposts = data
         },
-        siglePost(state,payload){
-            return state.singlepost = payload
+        siglePost(state,data){
+            return state.singlepost = data
         },
-        SET_CATEGORY_BlOG(state,payload){
-            return state.blogposts = payload
+        SET_CATEGORY_BlOG(state,data){
+            return state.blogposts = data
+        },
+        SET_SEARCH_BlOG(state,data) {
+            return state.blogposts = data
         }
 
     },
@@ -94,6 +97,7 @@ export default {
             })
         },
         
+        
         // loadBlogSinglePost({commit}){
         //     axios.get('/api/single-post/'+this.$route.params.id).then((response) => {
         //         commit('SET_BlOG_SINGLE_POST',response);
@@ -118,6 +122,12 @@ export default {
                 .then((response)=>{
                     console.log(response.data.posts);
                     context.commit('SET_CATEGORY_BlOG',response.data.posts)
+                })
+        },
+        searchPost(context,payload){
+            axios.get('/api/search?s='+payload)
+                .then((response)=>{
+                    context.commit('SET_SEARCH_BlOG',response.data.posts) 
                 })
         }
     },

@@ -6,8 +6,8 @@
                       <h3>Search</h3>
                   </div>
                   <form action="#">
-                      <input placeholder="Search..." type="text">
-                      <button type="submit">search</button>
+                      <input @keyup="realSearch" placeholder="Search..." v-model="keyword" type="text">
+                      <!-- <button type="submit" @click.prevent="realSearch">search</button> -->
                   </form>
               </div>
               
@@ -58,6 +58,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            keyword:''
+        }
+    },
     name: 'BlogSidebar',
     computed:{
        categories(){
@@ -71,6 +76,11 @@ export default {
         this.$store.dispatch("loadCategories")
         this.$store.dispatch("loadBlogPosts")
     },
+    methods:{
+        realSearch() {
+            this.$store.dispatch("searchPost",this.keyword)
+        }
+    }
 }
 </script>
 

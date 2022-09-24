@@ -123,7 +123,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getAllCategoryPost: function getAllCategoryPost() {
-      this.$store.dispatch("loadBlogPostsById", this.$route.params.id);
+      if (this.$route.params.id !== null) {
+        this.$store.dispatch("loadBlogPostsById", this.$route.params.id);
+      } else {
+        this.$store.dispatch("loadBlogPosts");
+      }
     }
   },
   watch: {
@@ -204,6 +208,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      keyword: ''
+    };
+  },
   name: 'BlogSidebar',
   computed: {
     categories: function categories() {
@@ -216,6 +225,11 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.$store.dispatch("loadCategories");
     this.$store.dispatch("loadBlogPosts");
+  },
+  methods: {
+    realSearch: function realSearch() {
+      this.$store.dispatch("searchPost", this.keyword);
+    }
   }
 });
 
@@ -428,6 +442,7 @@ var render = function() {
                                     { attrs: { to: "single-post/" + post.id } },
                                     [
                                       _c("img", {
+                                        staticStyle: { height: "175px" },
                                         attrs: { src: post.photo, alt: "" }
                                       })
                                     ]
@@ -602,7 +617,33 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("span", { attrs: { id: "blogsidebar" } }, [
     _c("div", { staticClass: "blog_sidebar_widget" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "widget_list widget_search" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("form", { attrs: { action: "#" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.keyword,
+                expression: "keyword"
+              }
+            ],
+            attrs: { placeholder: "Search...", type: "text" },
+            domProps: { value: _vm.keyword },
+            on: {
+              keyup: _vm.realSearch,
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.keyword = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "widget_list widget_categories" }, [
         _vm._m(1),
@@ -701,16 +742,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "widget_list widget_search" }, [
-      _c("div", { staticClass: "widget_title" }, [
-        _c("h3", [_vm._v("Search")])
-      ]),
-      _vm._v(" "),
-      _c("form", { attrs: { action: "#" } }, [
-        _c("input", { attrs: { placeholder: "Search...", type: "text" } }),
-        _vm._v(" "),
-        _c("button", { attrs: { type: "submit" } }, [_vm._v("search")])
-      ])
+    return _c("div", { staticClass: "widget_title" }, [
+      _c("h3", [_vm._v("Search")])
     ])
   },
   function() {

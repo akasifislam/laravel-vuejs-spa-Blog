@@ -29,7 +29,7 @@
                                         <figure>
                                             <div class="blog_thumb" v-if="post.photo">
                                                 <router-link :to="`single-post/${post.id}`" class="">
-                                                    <img :src="post.photo" alt="">
+                                                    <img style="height:175px" :src="post.photo" alt="">
                                                 </router-link>
                                                 <!-- <a href="blog-details.html"></a> -->
                                             </div>
@@ -110,7 +110,12 @@ export default {
     },
     methods:{
         getAllCategoryPost() {
-            this.$store.dispatch("loadBlogPostsById",this.$route.params.id)
+            if (this.$route.params.id!==null) {
+                this.$store.dispatch("loadBlogPostsById",this.$route.params.id)
+            }else{
+                this.$store.dispatch("loadBlogPosts")
+            }
+
         }
     },
     watch:{

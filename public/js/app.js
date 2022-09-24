@@ -2285,11 +2285,14 @@ __webpack_require__.r(__webpack_exports__);
     SET_BlOG_POSTS: function SET_BlOG_POSTS(state, data) {
       state.blogposts = data;
     },
-    siglePost: function siglePost(state, payload) {
-      return state.singlepost = payload;
+    siglePost: function siglePost(state, data) {
+      return state.singlepost = data;
     },
-    SET_CATEGORY_BlOG: function SET_CATEGORY_BlOG(state, payload) {
-      return state.blogposts = payload;
+    SET_CATEGORY_BlOG: function SET_CATEGORY_BlOG(state, data) {
+      return state.blogposts = data;
+    },
+    SET_SEARCH_BlOG: function SET_SEARCH_BlOG(state, data) {
+      return state.blogposts = data;
     }
   },
   actions: {
@@ -2344,6 +2347,11 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/categories-post/' + payload).then(function (response) {
         console.log(response.data.posts);
         context.commit('SET_CATEGORY_BlOG', response.data.posts);
+      });
+    },
+    searchPost: function searchPost(context, payload) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/search?s=' + payload).then(function (response) {
+        context.commit('SET_SEARCH_BlOG', response.data.posts);
       });
     }
   }

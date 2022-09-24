@@ -32,4 +32,20 @@ class FrontendController extends Controller
             'posts' => $blog
         ]);
     }
+
+    public function blogSearch()
+    {
+        $search = \Request::get('s');
+        if ($search != null) {
+            $posts = Blog::with('user', 'category')
+                ->where('title', 'LIKE', "%$search%")
+                ->orWhere('description', 'LIKE', "%$search%")
+                ->get();
+            return response()->json([
+                'posts' => $posts
+            ], 200);
+        } else {
+            return $this->blogPosts();
+        }
+    }
 }
