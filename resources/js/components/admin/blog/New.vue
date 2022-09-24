@@ -28,7 +28,7 @@
                 </select>
             </div>
             <div class="form-group">
-                  <img :src="form.photo" alt="dzfgsresgh" width="120px" height="80px">
+                  <img v-if="form.photo" :src="form.photo" alt="dzfgsresgh" width="120px" height="80px">
                   <input type="file" @change="changePhoto($event)" class="form-control" name="photo" id="photo" :class="{ 'is-invalid': form.errors.has('title') }">
             </div>
             <button type="submit" class="btn btn-success">submit</button>

@@ -9,6 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
+    <script>
+      $('.dropify').dropify();
+    </script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->

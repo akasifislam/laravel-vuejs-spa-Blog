@@ -66,12 +66,13 @@ const Toast = Swal.mixin({
 window.Toast = Toast
 
 Vue.component('AdminMain', require('./components/admin/AdminMaster.vue').default);
+Vue.component('HomeMain', require('./components/public/PublicMaster.vue').default);
 
 
 
 const router = new VueRouter({
     routes,
-    mode: 'history'
+    mode: 'hash'
   })
 
 const app = new Vue({

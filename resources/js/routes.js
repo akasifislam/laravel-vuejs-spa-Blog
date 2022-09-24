@@ -82,4 +82,49 @@ export const routes = [
     },
 
 
+
+
+    // =================== Frontend Routeing =====================
+
+    {
+        path:'/',
+        name: 'public-home',
+        component: ()=> import('./components/public/PublicHome.vue'),
+    },
+    {
+        path:'/test-page',
+        name: 'test-page',
+        component: ()=> import('./components/public/blog/TestPost.vue'),
+    },
+    {
+        path:'/blog-post',
+        name: 'blog-post',
+        component: ()=> import('./components/public/blog/BlogPost.vue'),
+    },
+    {
+        path:'/single-post/:id',
+        name: 'single-post',
+        component: ()=> import('./components/public/blog/BlogSingle.vue'),
+    },
+    {
+        path:'/categories-post/:id',
+        name: 'categories-post',
+        component: ()=> import('./components/public/blog/BlogPost.vue'),
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ]

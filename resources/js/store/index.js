@@ -6,6 +6,8 @@ export default {
         posts:[],
         tags:[],
         blogs:[],
+        blogposts: [],
+        singlepost:[],
     },
     getters:{
         getCategories(state)
@@ -23,7 +25,14 @@ export default {
         getBlogs(state)
         {
             return state.blogs
-        }
+        },
+        getBlogPosts(state)
+        {
+            return state.blogposts
+        },
+        singlepost(state){
+            return state.singlepost
+        },
     },
     mutations:{
         // category
@@ -46,6 +55,18 @@ export default {
         },
         SET_BlOGS(state,data){
             state.blogs = data
+        },
+        SET_BlOG_POSTS(state,data){
+            state.blogposts = data
+        },
+        siglePost(state,data){
+            return state.singlepost = data
+        },
+        SET_CATEGORY_BlOG(state,data){
+            return state.blogposts = data
+        },
+        SET_SEARCH_BlOG(state,data) {
+            return state.blogposts = data
         }
 
     },
@@ -69,6 +90,30 @@ export default {
             axios.get('/api/blogs').then((response) => {
                 commit('SET_BlOGS',response.data);
             })
+        },
+        loadBlogPosts({commit}){
+            axios.get('/api/blog-posts').then((response) => {
+                commit('SET_BlOG_POSTS',response.data);
+            })
+        },
+        getPostById({commit},payload){
+            axios.get('/api/single-post/'+payload)
+                .then((response)=>{
+                    commit('siglePost',response.data.post)
+                })
+        },
+        loadBlogPostsById({commit},payload){
+            axios.get('/api/categories-post/'+payload)
+                .then((response)=>{
+                    console.log(response.data.posts);
+                    commit('SET_CATEGORY_BlOG',response.data.posts)
+                })
+        },
+        loadSearchPost({commit},payload){
+            axios.get('/api/search?s='+payload)
+                .then((response)=>{
+                    commit('SET_SEARCH_BlOG',response.data.posts) 
+                })
         }
     },
 }
