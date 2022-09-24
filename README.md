@@ -31,7 +31,7 @@
 
 ### Downlaod and Clone
 
-git clone https://github.com/akasifislam/laraVueApi.git
+    -   git clone https://github.com/akasifislam/laravel-vuejs-spa-Blog.git
 
 # Larave8Vue2 and Vuex3:
 
