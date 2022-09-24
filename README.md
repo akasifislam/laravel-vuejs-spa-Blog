@@ -28,3 +28,22 @@
 ## Search
 
 ![sp4](https://user-images.githubusercontent.com/26628741/192111904-fdd9c5e9-9c53-4033-915f-bda865be9869.jpg)
+
+### Downlaod and Clone
+
+git clone https://github.com/akasifislam/laraVueApi.git
+
+# Larave8Vue2 and Vuex3:
+
+    -   composer install
+    -   npm install && npm run dev
+    -   cp .env.example .env
+    -   php artisan key:generate
+    -   php artisan migare --seed
+    -   npm run watch
+    -   php artisan serve --port=8000
+
+## Admin
+
+-   email: admin@mail.com
+-   password: secret007
