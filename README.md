@@ -7,3 +7,24 @@
 -   webpack
 -   Bootstrap-4
 -   Npm
+-   Realtime Search
+-   Progressbar
+-   Aweetalert
+-   Tostfication
+-   Lodash
+
+## Blog Page
+
+![sp1](https://user-images.githubusercontent.com/26628741/192111877-1cac2905-bf79-4914-85aa-da91bdcac4e6.jpg)
+
+## Category Blog
+
+![sp2](https://user-images.githubusercontent.com/26628741/192111886-37bf446d-e83b-4848-866c-8903f373dec3.jpg)
+
+## Single Blog
+
+![sp3](https://user-images.githubusercontent.com/26628741/192111893-ce860699-1d0c-4988-ba07-37a8efd0b8f8.jpg)
+
+## Search
+
+![sp4](https://user-images.githubusercontent.com/26628741/192111904-fdd9c5e9-9c53-4033-915f-bda865be9869.jpg)
