@@ -45,5 +45,5 @@
 
 ## Admin
 
--   email: admin@mail.com
--   password: secret007
+-       email: admin@mail.com
+-       password: secret007
